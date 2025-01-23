@@ -1,4 +1,4 @@
-import React from "react";
+import { useNavigate } from 'react-router-dom';
 import Slider from "./Slider";
 import Boxs from "./Boxs";
 import Button from "./Button";
@@ -18,10 +18,11 @@ import BrandImg from "./BrandImg";
 
 const Home = () => {
 
+    const navigate = useNavigate();
+
     return (
         <>
             <section >
-
                 <div
                     className="section-border position-absolute"
                     style={{ zIndex: -1 }}
@@ -59,15 +60,18 @@ const Home = () => {
                                                         Solar  </strong>
                                                     <strong className="text-accente">Power</strong>
                                                 </h2>
-                                                <p style={{ textAlign: "center", color: '#fff' }}>
+                                                <p style={{ textAlign: "center", color: '#fff', fontWeight: '600', fontSize: '18px' }}>
                                                     Installing a greener future for the
                                                     <span className="text-accent" style={{ color: ' #B3EF27' }}> earth </span> and your
                                                     <span className="text-accent" style={{ color: ' #B3EF27' }}> wallet </span>.
                                                 </p>
                                                 <div className="sqs-block-content" >
                                                     <div style={{ marginBottom: '15%' }}>
-                                                        <a href="/ " className="button-elements"
-                                                            style={{ textDecoration: 'none' }}>
+                                                        <a
+                                                            onClick={() => navigate('/estimated')}
+                                                            className="button-elements"
+                                                            style={{ textDecoration: 'none', fontWeight: '600', cursor: 'pointer' }}
+                                                        >
                                                             Get An Estimate
                                                         </a>
                                                     </div>
@@ -83,15 +87,13 @@ const Home = () => {
             </section>
 
 
-            <section className="page-section" style={{ marginTop: '-7%' }}>
-
+            <section className="page-section" style={{ marginTop: '-9%' }}>
                 <div className="content-wrapper py-5" style={{ backgroundColor: '#D9D9D9', maxWidth: '100%', maxHeight: '100%' }}>
-
                     <div data-fluid-engine="true">
                         <div className="row" style={{ marginTop: '3%' }}>
                             <div className="col-md-6">
                                 <div className="sqs-html-content" style={{ marginTop: '5%' }}>
-                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px' }}>
+                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px', fontWeight: '600' }}>
                                         Go <span style={{ color: 'rgba(147, 204, 15, 1)' }}>solar</span> with Helio GreenTech
                                     </h3>
                                     <p style={{ whiteSpace: "pre-wrap", fontSize: '16px' }}>

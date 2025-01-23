@@ -28,24 +28,24 @@ export default function CurvedSection() {
                                     >
                                         <div className="sqs-block-content" style={{ marginTop: '8%', marginBottom: '8%' }}>
                                             <div className="sqs-html-content">
-                                                <h3 style={{ textAlign: "left", color: 'white', whiteSpace: "pre-wrap", marginTop: '20%' }}>
+                                                <h3 style={{ textAlign: "left", color: 'white', fontWeight: '700', whiteSpace: "pre-wrap", marginTop: '20%' }}>
                                                     Our <strong style={{ color: '#93CC0F' }}>Experience</strong>
                                                 </h3>
-                                                <h4 style={{ whiteSpace: "pre-wrap", color: 'white', fontSize: '16px' }}>
+                                                <h4 style={{ whiteSpace: "pre-wrap", color: 'white', fontWeight: '500', fontSize: '15px' }}>
                                                     Ranked Best of KC as Kansas City’s best solar company two
                                                     consecutive years 2022 and 2023.
                                                 </h4>
-                                                <p style={{ whiteSpace: "pre-wrap", color: 'rgba(238, 238, 238, 1)', fontSize: '16px' }}>
+                                                <p style={{ whiteSpace: "pre-wrap", color: 'rgba(238, 238, 238, 1)', fontSize: '14px' }}>
                                                     With our educational, no-pressure approach to solar you can
                                                     feel confident you are making the right decision when you
                                                     choose to work with Helio GreenTech.
                                                 </p>
-                                                <p style={{ whiteSpace: "pre-wrap", color: 'rgba(238, 238, 238, 1)', fontSize: '16px' }}>
+                                                <p style={{ whiteSpace: "pre-wrap", color: 'rgba(238, 238, 238, 1)', fontSize: '14px' }}>
                                                     Helio GreenTech is a locally owned Kansas City based solar
                                                     company. Founded in 2019 by leadership that has been in the
                                                     solar industry since 2008.
                                                 </p>
-                                                <p style={{ whiteSpace: "pre-wrap", color: 'rgba(238, 238, 238, 1)', fontSize: '16px' }}>
+                                                <p style={{ whiteSpace: "pre-wrap", color: 'rgba(238, 238, 238, 1)', fontSize: '14px' }}>
                                                     Our experienced solar team believes in making a difference
                                                     in the world, helping the renewable energy industry grow,
                                                     and empowering our customers, teams, and communities to a
@@ -90,7 +90,6 @@ export default function CurvedSection() {
                                         <div className="styled-box" style={{ height: '50vh', width: '90%' }}>
                                             <iframe
                                                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                                                frameBorder="0"
                                                 allowFullScreen
                                                 title="Solar Consultation Video"
                                                 style={{ width: '100%', height: '100%' }}
@@ -115,9 +114,9 @@ export default function CurvedSection() {
                                                     <a
                                                         href="/contact"
                                                         className="button-elements"
-                                                        style={{ textDecoration: 'none', color: 'black' }}
+                                                        style={{ textDecoration: 'none', color: 'black', fontWeight: '500' }}
                                                     >
-                                                       See Details
+                                                        See Details
                                                     </a>
                                                 </div>
                                             </div>

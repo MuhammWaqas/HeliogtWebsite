@@ -1,33 +1,45 @@
-/* Button Block Base Style
-=================================================*/
-/* Navbar Container */
+h1, h2, h3, h4, h5, h6, p, a, div, span, button, input, textarea {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-weight: 700; /* Bold */
+}
+
+p {
+  font-weight: 400; /* Normal */
+}
+
+.small-text {
+  font-weight: 300; /* Light */
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* Keeps logo and CTA spaced */
-  background: rgba(238, 238, 238, 1);
-  padding: 1rem 2rem;
+  background: #eee; /* Light gray background */
+  padding: 1rem 2rem; /* Add some padding */
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 98%;
   margin-left: 1%;
   border-radius: 2px 2px 20px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 17vh;
+  overflow: hidden; /* Prevents overflow */
 }
-
 /* Logo Section */
 .navbar-logo img {
   max-height: 50px;
   width: auto;
-  margin-left: 10%;
+  margin-left: 2rem;
 }
 
 /* Burger Button */
 .navbar-burger {
-  display: none;
+  display: none; /* Hidden by default */
   flex-direction: column;
   cursor: pointer;
   background: none;
@@ -58,47 +70,54 @@
 /* Navigation Links */
 .navbar-links {
   display: flex;
-  gap: 2rem;
-  margin: 0 auto;
-  /* Center the nav links */
-  justify-content: center;
-  /* Ensures even spacing among links */
+  gap: 1.5rem;
   flex-grow: 1;
-  /* Allows nav links to expand in the center */
+  justify-content: center;
+  align-items: center;
 }
 
+
+/* Individual Link Styles */
 .navbar-link {
   text-decoration: none;
-  color: rgba(8, 11, 29, 1);
+  color: #080b1d;
   font-weight: 400;
+  font-family: "Poppins", sans-serif;
   transition: color 0.3s;
-  text-align: center;
-  font-family: 'Poppins';
 }
 
 .navbar-link:hover {
-  color: #0073e6;
+  color: #0073e6; /* Blue on hover */
 }
 
-/* CTA Section */
-.navbar-cta {
-  margin-left: auto;
-}
-
-.navbar-phone {
-  text-decoration: none;
-  color: #0073e6;
+.navbar-link.active {
   font-weight: bold;
+  color: rgba(147, 204, 15, 1);
+}
+
+/* Phone Button Style */
+.button-header {
+  background: #93CC0F;
+  width: 186px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  padding: 12px 26px 12px 26px;
+  border-radius: 13px;
+  margin-left: 5%;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .navbar-burger {
-    display: flex;
+    display: flex; /* Show burger button on mobile */
   }
 
   .navbar-links {
-    display: none;
+    display: none; /* Hide links by default */
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -111,11 +130,11 @@
   }
 
   .navbar-links.open {
-    display: flex;
+    display: flex; /* Show links when burger is active */
   }
 
   .navbar-link {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0; /* Add padding to links */
   }
 }
 
@@ -313,6 +332,69 @@
   text-decoration: none;
 }
 
+.button-elementeds {
+  background: #93CC0F;
+  width: 200px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(238, 238, 238, 1);
+  padding: 12px 26px 12px 26px;
+  border-radius: 13px;
+  border: none;
+  margin-top: 5%;
+  text-decoration: none;
+}
+
+.buttons-elemented {
+  background: rgba(251, 251, 251, 0.95);
+  width: 247px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(147, 204, 15, 1);
+  padding: 12px 26px 12px 26px;
+  border-radius: 13px;
+  border: 2px solid rgba(147, 204, 15, 1);
+  margin-top: 5%;
+  text-decoration: none;
+  margin-left: 10%;
+}
+
+.buttoned-element {
+  background: #93CC0F;
+  width: 313px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(238, 238, 238, 1);
+  padding: 12px 26px 12px 26px;
+  border-radius: 13px;
+  border: none;
+  margin-top: 5%;
+  text-decoration: none;
+}
+
+.buttonl-elements {
+  background: #93CC0F;
+  width: 200px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 12px;
+  color: #fff;
+  padding: 12px 26px 12px 26px;
+  text-decoration: none;
+}
+
 .button-elements {
   background: #93CC0F;
   width: 340px;
@@ -343,6 +425,7 @@
   margin-top: 5%;
 }
 
+
 .button-elementes {
   background: rgba(255, 255, 255, 0.3);
   width: 340px;
@@ -355,6 +438,7 @@
   color: #fff;
   padding: 12px 26px 12px 26px;
   border-radius: 13px;
+  margin-top: 5%;
  
 }
 
@@ -465,26 +549,15 @@
   overflow: hidden;
 } */
 .curve {
-  background-image:
-    url('../content/bg_exp1.png'),
-    url('../content/bg_exp.png');
-  background-size:
-    cover,
-    cover;
-  background-position:
-    center -5%,
-    center -2%;
-  background-repeat:
-    no-repeat,
-    no-repeat;
+  background-image: url('../content/bg_exp1.png'), url('../content/bg_exp.png');
+  background-size: cover, cover;
+  background-position: center -5%, center -2%;
+  background-repeat: no-repeat, no-repeat;
   display: block;
   width: 100%;
-  min-height: 100px;
+ 
   height: auto;
 }
-
-
-
 
 .curved {
   background-image:
@@ -1275,4 +1348,71 @@ footer .bottom-details .bottom_text {
   /* Adjust size if needed */
   color: #333;
   /* Adjust the text color */
+}
+
+#range-slider {
+  width: 600px;
+  margin: auto;
+}
+#range-slider .range-slider__thumb[data-lower] {
+    width: 0;
+}
+#range-slider .range-slider__range {
+    border-radius: 6px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url('../content/footer_image.png');
+  display: block;
+  max-width: 1400px;
+  min-height: 100px;
+}
+
+.footers {
+  background-color: rgba(228, 255, 166, 1);
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.footers .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 278px;
+}
+
+.footers .logo span {
+  color: #78be20;
+}
+
+.footers .disclaimer {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.footers .links {
+  font-size: 0.9rem;
+}
+
+.footers .links a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footers .links a:hover {
+  text-decoration: underline;
+}
+
+.footers .logo img {
+  width: 236px;
+  margin-left: 5px;
+  vertical-align: middle;
 }

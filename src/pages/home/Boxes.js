@@ -2,13 +2,13 @@ import React from 'react'
 
 export default function Boxes() {
     return (
-        <div>
+        <>
             <section className="page-section">
                 <div className="section-border" data-controller="SectionDivider" style={{ clipPath: "url(#section-divider-65a6b757d33ea3703d6aa7aa)" }}>
                     <div className="section-background"></div>
                 </div>
 
-                <div className="content-wrapper">
+                <div className="content-wrapper" style={{ maxWidth: '100%', maxHeight: '100%' }}>
                     <div className="content">
                         <div data-fluid-engine="true">
                             <div className="row d-flex align-items-stretch">
@@ -158,6 +158,6 @@ export default function Boxes() {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     )
 }

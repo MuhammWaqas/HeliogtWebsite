@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function SaveSolar() {
     return (
-        <div>
-            <section className="page-section" >
+        <>
+            <section className="page-section" style={{marginTop: '5%'}}>
 
                 <div className="content-wrapper"
                    >
@@ -18,15 +18,15 @@ export default function SaveSolar() {
                         borderImageSource: 'linear-gradient(171.18deg, rgba(147, 204, 15, 0) 4%, #93CC0F 98.24%)',
                         boxShadow: '2px 2px 7px 0px rgba(0, 0, 0, 0.25)'
                     }}>
-                        <div className="row">
+                        <div className="row" style={{padding: '20px'}}>
                             <div className="col-12">
-                                <h2 className="font-weight-bold" style={{ fontSize: '26px' }}>
+                                <h2 className="font-weight-bold mt-4" style={{ fontSize: '26px' }}>
                                    <strong> Understanding Evergy's Rate Changes:</strong>
                                 </h2>
                                 <h3 className="font-weight-bold" style={{ fontSize: '28px',marginTop: '2%' }}>
                                     SAVE BY GOING SOLAR!
                                 </h3>
-                                <p style={{ fontSize: '18px' }}>
+                                <p style={{ fontSize: '18px',marginTop: '2%' }}>
                                     Evergy has implemented the most significant rate change in Missouri's history, resulting in a
                                     substantial increase in <span style={{color: 'rgba(147, 204, 15, 1)'}}>energy costs</span>. These changes officially took effect on October 1st, 2023, and
                                     are poised to have a substantial impact on residents' energy bills, especially in the hot summers.
@@ -39,8 +39,8 @@ export default function SaveSolar() {
                             </div>
                         </div>
 
-                        <div className="row mt-4" style={{ background: 'rgba(13, 22, 71, 1)', borderRadius: '12px' }}>
-                            <div className="col-12">
+                        <div className="row mt-4" style={{ background: 'rgba(13, 22, 71, 1)',width: '90%',marginLeft: '5%', borderRadius: '12px',padding: '20px' }}>
+                            <div className="col-md-12">
                                 <h3 className="text-white" style={{ fontSize: '28px',marginTop: '3%',}}>
                                     How Solar Can Help Mitigate the Concern of Time of Use
                                 </h3>
@@ -69,6 +69,6 @@ export default function SaveSolar() {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     );
 }

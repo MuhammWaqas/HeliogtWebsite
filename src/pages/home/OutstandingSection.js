@@ -33,8 +33,8 @@ export default function OutstandingSection() {
                                         >
                                             <div className="sqs-block-content">
                                                 <div className="sqs-html-content">
-                                                    <h2 style={{ textAlign: "left", whiteSpace: "pre-wrap", marginTop: '10%', fontSize: '24px',fontWeight: '500' }}>
-                                                        Outstanding <span style={{color: 'rgba(147, 204, 15, 1)'}}>Solar</span> Service
+                                                    <h2 style={{ textAlign: "left", whiteSpace: "pre-wrap", marginTop: '10%',fontWeight: '600', fontSize: '24px',fontWeight: '500' }}>
+                                                       <strong> Outstanding <span style={{color: 'rgba(147, 204, 15, 1)'}}>Solar</span> Service</strong>
                                                     </h2>
                                                     <p style={{ whiteSpace: "pre-wrap", fontSize: '15px' }}>
                                                         We aim to provide a range of fantastic solar services to clients

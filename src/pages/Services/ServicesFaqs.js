@@ -45,12 +45,12 @@ export default function ServicesFaqs() {
         <>
 
             <div className="container" >
-                <h3 style={{textAlign:  'center'}}>People may ask</h3>
+                <h3 style={{textAlign:  'center',fontWeight: '600'}}>People may ask</h3>
                 <div className="row" style={{ marginTop: '3%' }}>
                     <div className="col-md-12">
                         <div className="accordion" >
                             {faqItems.map((item, index) => (
-                                <div className="accordion-item" key={item.id}>
+                                <div className="accordion-item" style={{padding: '5px'}} key={item.id}>
                                     <button
                                         id={`accordion-button-${item.id}`}
                                         aria-expanded={activeIndex === index}

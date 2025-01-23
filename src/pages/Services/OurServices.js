@@ -1,12 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 export default function OurServices() {
     return (
         <>
             <section className="page-section">
-
                 <div className="content-wrapper py-5" style={{ maxWidth: '100%', maxHeight: '100%' }}>
-
                     <div data-fluid-engine="true">
                         <div className="row" style={{ display: 'flex', alignItems: 'stretch' }}>
                             <div
@@ -26,6 +24,7 @@ export default function OurServices() {
                                             textAlign: 'left',
                                             whiteSpace: 'pre-wrap',
                                             fontSize: '30px',
+                                            fontWeight: '600',
                                         }}
                                     >
                                         Our Services

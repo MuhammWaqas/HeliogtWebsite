@@ -8,7 +8,7 @@ export default function Boxs() {
                     <div className="section-background"></div>
                 </div>
 
-                <div className="content-wrapper">
+                <div className="content-wrapper" style={{ maxWidth: '100%', maxHeight: '100%' }}>
                     <div className="content">
                         <div data-fluid-engine="true">
                             <div className="row d-flex align-items-stretch">
@@ -35,8 +35,8 @@ export default function Boxs() {
                                                     </div>
                                                     <hr style={{ width: '50%', marginLeft: '25%', marginTop: '12%', color: 'rgba(255, 255, 255, 0.2)' }} />
                                                     <p style={{ whiteSpace: "pre-wrap" }}>&nbsp;</p>
-                                                    <p style={{ padding: '15px', textAlign: 'center' }}>
-                                                        <span className="sqsrte-text-color--white" >
+                                                    <p style={{ padding: '15px', textAlign: 'center', color: 'rgba(238, 238, 238, 1)' }}>
+                                                        <span style={{ color: 'rgba(238, 238, 238, 1)', fontSize: '14px' }}>
                                                             Our solar systems have life
                                                             expectancy of 40+ years and we
                                                             back every component of our
@@ -78,12 +78,12 @@ export default function Boxs() {
                                                     <hr style={{ width: '50%', marginLeft: '25%', marginTop: '12%', color: 'rgba(255, 255, 255, 0.2)' }} />
                                                     <p style={{ whiteSpace: "pre-wrap" }}>&nbsp;</p>
                                                     <p style={{ padding: '15px', textAlign: 'center' }}>
-                                                        <span className="sqsrte-text-color--white" >
+                                                        <span style={{ color: 'rgba(238, 238, 238, 1)', fontSize: '14px' }}>
                                                             The average tax credit for a solar
                                                             system is around $7,000 that’s
                                                             money you would have otherwise
                                                             spent on your taxes that you get
-                                                            back in your own pocket just for
+                                                            back in your own pocket just for <br />
                                                             going solar
                                                         </span>
                                                     </p>
@@ -117,7 +117,7 @@ export default function Boxs() {
                                                     <hr style={{ width: '50%', marginLeft: '25%', marginTop: '12%', color: 'rgba(255, 255, 255, 0.2)' }} />
                                                     <p style={{ whiteSpace: "pre-wrap" }}>&nbsp;</p>
                                                     <p style={{ padding: '15px', textAlign: 'center' }}>
-                                                        <span className="sqsrte-text-color--white" >
+                                                        <span style={{ color: 'rgba(238, 238, 238, 1)', fontSize: '14px' }}>
                                                             When you go solar you can trade
                                                             your increasing electric bill that
                                                             never goes away for a solar

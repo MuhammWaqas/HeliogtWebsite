@@ -39,7 +39,7 @@ export default function Services() {
                                         />
                                     </div>
                                     <div style={{ marginTop: '5%' }}>
-                                        <h4>Residential</h4>
+                                        <h4 style={{fontWeight: '600'}}>Residential</h4>
                                         <p style={{ whiteSpace: "pre-wrap", fontSize: '16px', color: 'rgba(0, 0, 0, 1)' }}>
                                             As a local leader in the solar industry across Kansas,
                                             Missouri, and the vibrant Kansas City area, our team
@@ -80,7 +80,7 @@ export default function Services() {
                                         />
                                     </div>
                                     <div style={{ marginTop: '5%' }}>
-                                        <h4>Commercial Solar</h4>
+                                        <h4 style={{fontWeight: '600'}}>Commercial Solar</h4>
                                         <p style={{ whiteSpace: "pre-wrap", fontSize: '16px', color: 'rgba(0, 0, 0, 1)' }}>
                                             Learn more about the benefits of going solar for your
                                             business with Helio GreenTech, we can help you qualify
@@ -120,7 +120,7 @@ export default function Services() {
                                         />
                                     </div>
                                     <div style={{ marginTop: '5%' }}>
-                                        <h4>Solar Repair and EV Chargers</h4>
+                                        <h4 style={{fontWeight: '600'}}>Solar Repair and EV Chargers</h4>
                                         <p style={{ whiteSpace: "pre-wrap", fontSize: '16px', color: 'rgba(0, 0, 0, 1)' }}>
                                             Our solar solutions are thoughtfully crafted to cater
                                             to the specific requirements, guaranteeing peak

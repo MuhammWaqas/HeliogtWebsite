@@ -30,7 +30,7 @@ export default function GoingSolar() {
                         <div className="section-background-overlay" style={{ opacity: 0 }} />
                     </div>
                 </div>
-                <div className="content-wrapper" style={{ maxWidth: '100%', maxHeight: '100%',marginBottom: '5%' }}>
+                <div className="content-wrapper" style={{ maxWidth: '100%', maxHeight: '100%',marginTop: '5%',marginBottom: '5%' }}>
                     <div className="content">
                         <div data-fluid-engine="true">
                             <div className="row">
@@ -41,8 +41,8 @@ export default function GoingSolar() {
                                         border: '1px solid rgba(255, 255, 255, 0.3)',
                                         borderRadius: '12px',
                                         padding: '20px',
-                                        height: '100%', // Ensures the height adjusts according to the content
-                                        width: '100%', // Makes sure the width is consistent across cards
+                                        height: '100%',
+                                        width: '100%',
                                     }}
                                   >
                                         <div
@@ -123,12 +123,14 @@ export default function GoingSolar() {
                                                                     <br />
                                                                     <span className="sqsrte-text-color--white">
                                                                         <em>✓</em>
+                                                                        <em>NO RATE HIKES OR </em>
                                                                     </span>
-                                                                    <em>NO RATE HIKES OR </em>
+                                                                   
                                                                     <span className="sqsrte-text-color--white">
                                                                         <em>TIME OF USE</em>
+                                                                        <em> CHANGES{" "}</em>
                                                                     </span>
-                                                                    <em> CHANGES{" "}</em>
+                                                                    
                                                                     <br />
                                                                     <span className="sqsrte-text-color--white">
                                                                         <em>✓ LIFETIME MONITORING</em>
@@ -182,7 +184,7 @@ export default function GoingSolar() {
                                                                     <span className="sqsrte-text-color--white">
                                                                         <em>✓</em>
                                                                     </span>
-                                                                    30% <span className="sqsrte-text-color--white">TAX CREDIT</span>
+                                                                   <span className="sqsrte-text-color--white">30% TAX CREDIT</span>
                                                                     {" "}
                                                                     <br />
                                                                     <span className="sqsrte-text-color--white">

@@ -5,25 +5,20 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const handleMenuToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const navItems = [
     "about-us",
-    "services-solar",
+    "services",
     "gosolar",
     "financing",
     "faq",
     "careers",
     "solar-news",
     "contact",
-    "1-866-435-4648",
   ];
 
   return (
     <header className="navbar">
-      <div className="navbar-logo ml-2">
+      <div className="navbar-logo">
         <Link to="/">
           <img
             src="assets/content/right.png"
@@ -36,7 +31,7 @@ const Header = () => {
       {/* Burger Toggle Button */}
       <button
         className={`navbar-burger ${isMenuOpen ? "active" : ""}`}
-        onClick={handleMenuToggle}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <span className="burger-bar"></span>
         <span className="burger-bar"></span>
@@ -54,12 +49,21 @@ const Header = () => {
               className={`navbar-link ${isActive ? "active" : ""}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              {item
-                .replace("-", " ")
-                .replace(/\b\w/g, (char) => char.toUpperCase())}
+              {item.replace("-", " ").replace(/\b\w/g, (char) => char.toUpperCase())}
             </Link>
+
           );
+
         })}
+        <a
+          href="tel:18664354648"
+          className="navbar-link button-header"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          1-866-435-4648
+        </a>
+        {/* Phone Number Button */}
+
       </nav>
     </header>
   );

@@ -35,67 +35,74 @@ export default function Slider() {
 
     return (
         <div>
-            <div className="curve-line top-curve" style={{marginTop: '3%'}}></div>
+            <div className="curve-line top-curve" style={{ marginTop: '3%' }}></div>
             <div className="container-fluid text-center my-3">
                 <div className="row mx-auto my-auto justify-content-center" style={{ gap: '10px' }}>
                     <div id="recipeCarousele" className="carousel slide" data-bs-ride="carousel">
-                        <div className="carousel-inner" role="listbox">
+                        <div className="carousel-inner" role="listbox" style={{marginTop: '2%'}}>
                             <div className="carousel-item active">
-                                <div className="col-md-3 left-curved-image">
+                                <div className="col-12 col-md-3">
                                     <img
                                         src={'assets/content/image.png'}
-                                      
-                                        style={{
-                                            height: '100%', // Fill the card height
-                                            width: '100%', // Fill the card width
-
-                                        }}
+                                        className="img-fluid" // Bootstrap class for responsive images
+                                        alt="Slide 1"
                                     />
                                 </div>
                             </div>
                             <div className="carousel-item">
-                                <div className="col-md-3">
+                                <div className="col-12 col-md-3">
                                     <img
                                         src={'assets/content/curves_img.png'}
-                                        style={{
-                                            height: '100%', // Fill the card height
-                                            width: '100%', // Fill the card width
-
-                                        }}
+                                        className="img-fluid" // Bootstrap class for responsive images
+                                        alt="Slide 2"
+                                       
                                     />
                                 </div>
                             </div>
                             <div className="carousel-item">
-                                <div className="col-md-3">
+                                <div className="col-12 col-md-3">
                                     <img
                                         src={'assets/content/curves_imge.png'}
-                                        style={{
-                                            height: '100%', // Fill the card height
-                                            width: '100%', // Fill the card width
-
-                                        }}
+                                        className="img-fluid" // Bootstrap class for responsive images
+                                        alt="Slide 3"
                                     />
                                 </div>
                             </div>
                             <div className="carousel-item">
-                                <div className="col-md-3">
+                                <div className="col-12 col-md-3">
                                     <img
                                         src={'assets/content/curves_image.png'}
-                                        style={{
-                                            height: '100%', // Fill the card height
-                                            width: '100%', // Fill the card width
-
-                                        }}
+                                        className="img-fluid" // Bootstrap class for responsive images
+                                        alt="Slide 4"
                                     />
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
-            <div className="curve-line bottom-curve"></div>
+            <div className="curve-line bottom-curve" style={{marginTop: '-2%'}}></div>
+
+            <style jsx>{`
+                @media (max-width: 576px) {
+                    #recipeCarousele .carousel-item {
+                        height: 200px; // Set a specific height for mobile view
+                    }
+                    #recipeCarousele img {
+                        object-fit: cover; // Ensure the image covers the area
+                        height: 100%; // Fill the height
+                    }
+                }
+                @media (min-width: 577px) {
+                    #recipeCarousele .carousel-item {
+                        height: 300px; // Set a specific height for larger screens
+                    }
+                    #recipeCarousele img {
+                        object-fit: cover; // Ensure the image covers the area
+                        height: 100%; // Fill the height
+                    }
+                }
+            `}</style>
         </div>
     );
 }

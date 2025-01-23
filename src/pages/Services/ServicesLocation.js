@@ -9,7 +9,7 @@ export default function ServicesLocation() {
                 <div className="content-wrapper py-5" style={{ maxWidth: '100%', maxHeight: '100%' }}>
 
                     <div data-fluid-engine="true">
-                        <h2 style={{ textAlign: 'center', marginTop: '3%' }}>OUR LOCATIONS</h2>
+                        <h2 style={{ textAlign: 'center', marginTop: '3%',fontWeight: '600' }}>OUR LOCATIONS</h2>
                         <div className="row" style={{ display: 'flex', alignItems: 'stretch', marginTop: '5%' }}>
 
                             <div
@@ -88,7 +88,7 @@ export default function ServicesLocation() {
                                             <a
                                                 href="/contact"
                                                 className="button-elements"
-                                                style={{ textDecoration: 'none', color: 'rgba(238, 238, 238, 1)',}}
+                                                style={{ textDecoration: 'none', color: 'rgba(238, 238, 238, 1)',fontWeight: '500'}}
                                             >
                                                 Check out our reviews 
                                             </a>

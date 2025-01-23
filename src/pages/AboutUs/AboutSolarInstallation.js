@@ -11,7 +11,7 @@ export default function AboutSolarInstallation() {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="sqs-html-content">
-                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px' }}>
+                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px',fontWeight: '600' }}>
                                         Solar installation in Missouri and Kansas
                                     </h3>
                                     <p style={{ whiteSpace: "pre-wrap", fontSize: '16px' }}>
@@ -25,7 +25,7 @@ export default function AboutSolarInstallation() {
                                         can be confident that you’ll get the best workmanship, best solar equipment, and best warranties in town. Thanks to our amazing team and
                                         to all our customers that have placed their trust in Helio GreenTech to make us The Best Solar Company two years in a row.
                                     </p>
-                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px' }}>
+                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px',fontWeight: '600' }}>
                                         What Makes Helio GreenTech the Best Solar company in Kansas City?
                                     </h3>
                                     <p style={{ whiteSpace: "pre-wrap", fontSize: '16px' }}>

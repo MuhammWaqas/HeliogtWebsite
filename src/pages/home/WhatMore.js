@@ -6,7 +6,7 @@ export default function WhatMore() {
             <div className="container" style={{ marginTop: '6%' }}>
                 <div className="row">
                     <div className="col-12 text-center my-3">
-                        <h2 className="text-center">Want More Info?</h2>
+                        <h2 className="text-center" style={{fontWeight: '600'}}>Want More Info?</h2>
                         <p className="text-center">Want More Info?</p>
                     </div>
                 </div>
@@ -35,8 +35,8 @@ export default function WhatMore() {
                                     background: 'white', // Set the background color for the inner content
                                     backgroundClip: 'content-box', // Ensures the background is applied only to the content area
                                     borderImage: 'linear-gradient(180deg, rgba(147, 204, 15, 0.8) 0%, rgba(13, 22, 71, 0.8) 100%) 1' // Define the gradient border
-                                  }}
-                                  
+                                }}
+
                             >
                                 <div className="card-body d-flex flex-column justify-content-center text-center"
                                 >

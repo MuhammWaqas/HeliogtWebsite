@@ -18,7 +18,7 @@ export default function SolarConsultation() {
                                 <div className="col-md-6">
                                     <div className="sqs-html-content h-100"> {/* Added h-100 to ensure full height */}
                                         <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '24px' }}>
-                                            <strong> Free Solar Consultation</strong>
+                                            <strong>Free Solar Consultation</strong>
                                         </h3>
                                         <p style={{ whiteSpace: "pre-wrap", fontSize: '17px' }}>
                                             Going solar with Helio GreenTech starts with an
@@ -37,7 +37,7 @@ export default function SolarConsultation() {
 
                                 <div className="col-md-6">
                                     <div className="video-container h-100"> {/* Added h-100 to ensure full height */}
-                                        <div className="video-frame" style={{ width: '100%', height: '100%' }}>
+                                        <div className="video-frame" style={{ width: '95%', height: '100%' }}>
                                             <iframe
                                                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                                                 frameBorder="0"
