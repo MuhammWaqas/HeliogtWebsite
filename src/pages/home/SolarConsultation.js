@@ -35,18 +35,34 @@ export default function SolarConsultation() {
                                     </div>
                                 </div>
 
-                                <div className="col-md-6">
-                                    <div className="video-container h-100"> {/* Added h-100 to ensure full height */}
-                                        <div className="video-frame" style={{ width: '95%', height: '100%' }}>
+                                <div
+                                    className="col-md-6 d-flex flex-column justify-content-between"
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                     
+                                        padding: "1rem",
+                                    }}
+                                >
+                                    <div className="video-container text-center" style={{ flex: 1 }}>
+                                        <div
+                                            className="video-frame"
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                position: "relative",
+                                               
+                                            }}
+                                        >
                                             <iframe
                                                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                                                frameBorder="0"
                                                 allowFullScreen
-                                                title="Solar Consultation Video"
-                                                style={{ width: '100%', height: '100%' }}
+                                                title="Solar Installation Video"
+                                                style={{ width: "100%", height: "100%", border: "none" }}
                                             ></iframe>
                                         </div>
                                     </div>
+                                   
                                 </div>
                             </div> {/* End of row */}
                         </div>
