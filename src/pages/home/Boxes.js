@@ -3,7 +3,7 @@ import React from 'react'
 export default function Boxes() {
     return (
         <>
-            <section className="page-section">
+            <section className="page-section" style={{marginTop: '8%'}}>
                 <div className="section-border" data-controller="SectionDivider" style={{ clipPath: "url(#section-divider-65a6b757d33ea3703d6aa7aa)" }}>
                     <div className="section-background"></div>
                 </div>

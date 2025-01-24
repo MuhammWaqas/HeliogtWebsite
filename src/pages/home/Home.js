@@ -87,7 +87,7 @@ const Home = () => {
             </section>
 
 
-            <section className="page-section" style={{ marginTop: '-9%' }}>
+            <section className="page-section" style={{ marginTop: '-11%' }}>
                 <div className="content-wrapper py-5" style={{ backgroundColor: '#D9D9D9', maxWidth: '100%', maxHeight: '100%' }}>
                     <div data-fluid-engine="true">
                         <div className="row" style={{ marginTop: '3%' }}>

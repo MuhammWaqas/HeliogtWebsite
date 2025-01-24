@@ -41,22 +41,20 @@ export default function OutstandingSection() {
                                                         near Kansas City, MO. Our professionals are skilled, reliable, and
                                                         ready to go the extra mile to ensure every client gets the solar
                                                         system that they deserve.Above all we want you to be thrilled
-                                                        to go solar.
-                                                    </p>
-                                                    <p style={{ whiteSpace: "pre-wrap", fontSize: '15px' }}>
+                                                        to go solar. <br />
                                                         We know that solar is good for the planet, it's good for your
                                                         wallet, and it's a system you can trust. <strong>We keep working for
-                                                        you after the system is installed.</strong>
-                                                    </p>
-                                                    <p style={{ whiteSpace: "pre-wrap", fontSize: '15px' }}>
-                                                        We are your energy partner every step of the way. We file any
+                                                        you after the system is installed.</strong> 
+                                                        <br /> We are your energy partner every step of the way. We file any
                                                         local rebates for you, we file to have your meter exchanged,
                                                         help you get permission to operate as quick as possible so
                                                         your system can start saving you money, you have full access
                                                         and transparent monitoring of your system, and though the
                                                         system should be maintenance free should something need
                                                         our attention we are there. <span style={{color: 'rgba(147, 204, 15, 1)'}}>CALL NOW</span>
+
                                                     </p>
+                                            
                                                 </div>
                                             </div>
                                         </div>

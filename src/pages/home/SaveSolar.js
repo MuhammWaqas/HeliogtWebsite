@@ -61,14 +61,14 @@ export default function SaveSolar() {
                             {/* Video Card */}
                             <div className="video-card position-relative">
                                 {/* Top Right Green Arrow */}
-                                <div className="arrow-top-right"></div>
+                                {/* <div className="arrow-top-right"></div> */}
 
                                 {/* Video Section */}
                                 <div className="video-wrapper">
                                     <iframe
                                         className="video-frame"
                                         src="https://www.youtube.com/embed/your_video_id"
-                                        frameBorder="0"
+                                       
                                         allowFullScreen
                                         title="Responsive Video"
                                     ></iframe>
@@ -99,7 +99,7 @@ export default function SaveSolar() {
                                 </div>
 
                                 {/* Bottom Left Green Arrow */}
-                                <div className="arrow-bottom-left"></div>
+                                {/* <div className="arrow-bottom-left"></div> */}
                             </div>
                         </div>
                     </div>
