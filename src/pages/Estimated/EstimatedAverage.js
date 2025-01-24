@@ -167,7 +167,7 @@ export default function EstimatedAverage() {
                                                 border: "none",
                                                 padding: "10px 30px",
                                                 fontWeight: "bold",
-                                                width: '396px',
+                                                width: '376px',
                                                 height: '55px',
                                                 fontSize: "18px",
                                                 borderRadius: "8px",

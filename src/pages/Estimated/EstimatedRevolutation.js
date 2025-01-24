@@ -82,13 +82,14 @@ export default function EstimatedRevolutation() {
                                             top: "50%",
                                             transform: "translateY(-50%)",
                                             background: "rgba(255, 255, 255, 0.3)",
-                                            width: "100%",
+                                            width: "90%", // Use percentage for responsiveness
                                             maxWidth: "691px",
-                                            height: '100%',
+                                            height: 'auto', // Allow height to adjust based on content
                                             maxHeight: '600px',
                                             borderRadius: "12px",
                                             border: "2px solid #77B900",
                                             overflow: "hidden",
+                                            padding: '20px', // Add padding for better spacing
                                         }}
                                     >
 
@@ -96,7 +97,7 @@ export default function EstimatedRevolutation() {
                                         <h2
                                             style={{
                                                 fontWeight: "bold",
-                                                fontSize: "40px",
+                                                fontSize: "2rem", // Use rem for better scalability
                                                 marginBottom: "30px",
                                                 color: '#fff',
                                                 marginTop: '5%',
@@ -105,82 +106,28 @@ export default function EstimatedRevolutation() {
                                             How Can Revolution <br />
                                             Solar Contact You?
                                         </h2>
-                                        <div style={{}}>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                placeholder="First Name"
-                                                style={{
-                                                    width: '100%',
-                                                    maxWidth: '450px',
-                                                    maxHeight: '60px',
-                                                    padding: '15px',
-                                                    background: 'rgba(217, 217, 217, 1)',
-                                                    border: '1px solid rgba(147, 204, 15, 0.3)',
-                                                    borderRadius: '10px',
-                                                    color: 'rgba(145, 145, 145, 1)',
-                                                    fontSize: '12px',
-                                                    marginLeft: '16%',
-                                                }}
-                                            />
-                                        </div>
 
-                                        <div style={{ marginTop: '2%' }}>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                placeholder="Last Name"
-                                                style={{
-                                                    width: '100%',
-                                                    maxWidth: '450px',
-                                                    maxHeight: '60px',
-                                                    padding: '15px',
-                                                    background: 'rgba(217, 217, 217, 1)',
-                                                    border: '1px solid rgba(147, 204, 15, 0.3)',
-                                                    borderRadius: '10px',
-                                                    color: 'rgba(145, 145, 145, 1)',
-                                                    fontSize: '12px',
-                                                    marginLeft: '16%',
-                                                }}
-                                            />
-                                        </div>
-                                        <div style={{ marginTop: '2%' }}>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                placeholder="Phone"
-                                                style={{
-                                                    width: '100%',
-                                                    maxWidth: '450px',
-                                                    maxHeight: '60px',
-                                                    padding: '15px',
-                                                    background: 'rgba(217, 217, 217, 1)',
-                                                    border: '1px solid rgba(147, 204, 15, 0.3)',
-                                                    borderRadius: '10px',
-                                                    color: 'rgba(145, 145, 145, 1)',
-                                                    fontSize: '12px',
-                                                    marginLeft: '16%',
-                                                }}
-                                            />
-                                        </div>
-                                        <div style={{ marginTop: '2%' }}>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                placeholder="Email"
-                                                style={{
-                                                    width: '100%',
-                                                    maxWidth: '450px',
-                                                    maxHeight: '60px',
-                                                    padding: '15px',
-                                                    background: 'rgba(217, 217, 217, 1)',
-                                                    border: '1px solid rgba(147, 204, 15, 0.3)',
-                                                    borderRadius: '10px',
-                                                    color: 'rgba(145, 145, 145, 1)',
-                                                    fontSize: '12px',
-                                                    marginLeft: '16%',
-                                                }}
-                                            />
+                                        {/* Input Fields */}
+                                        <div style={{alignItems: 'center' }}>
+                                            {['First Name', 'Last Name', 'Phone', 'Email'].map((placeholder, index) => (
+                                                <div key={index} style={{ marginTop: '2%' }}>
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        placeholder={placeholder}
+                                                        style={{
+                                                            width: '90%',
+                                                            padding: '15px',
+                                                            marginLeft: '7%',
+                                                            background: 'rgba(217, 217, 217, 1)',
+                                                            border: '1px solid rgba(147, 204, 15, 0.3)',
+                                                            borderRadius: '10px',
+                                                            color: 'rgba(145, 145, 145, 1)',
+                                                            fontSize: '12px',
+                                                        }}
+                                                    />
+                                                </div>
+                                            ))}
                                         </div>
 
                                         {/* Next Button */}
@@ -191,7 +138,8 @@ export default function EstimatedRevolutation() {
                                                 backgroundColor: "#77B900",
                                                 border: "none",
                                                 padding: "10px 30px",
-                                                width: '376px',
+                                                width: '100%', // Make button full width
+                                                maxWidth: '376px', // Limit max width
                                                 height: '55px',
                                                 fontSize: "18px",
                                                 borderRadius: "8px",
@@ -201,13 +149,16 @@ export default function EstimatedRevolutation() {
                                         >
                                             Show me the numbers
                                         </button>
-                                        <p style={{ fontSize: '10px', marginTop: '2%', textAlign: 'center', color: 'rgba(255, 255, 255, 0.85)' }}>By submitting your information, you consent for Revolution Solar directly or
-                                            through its approved partner sunset to contact you from time-to-time by
+
+                                        <p style={{ fontSize: '10px', marginTop: '2%', textAlign: 'center', color: 'rgba(255, 255, 255, 0.85)' }}>
+                                            By submitting your information, you consent for Revolution Solar directly or
+                                            through its approved partner sunset to contact you from time-to-time by
                                             telephone, text, automated technology, calls from artificial voices, email and/or
                                             direct mail with information and offers about products and services that might
                                             interest me. This consent is not required to make a purchase. Reply ‘STOP’ to
                                             opt-out at any time. Clicking the button above constitutes your electronic
-                                            signature. Privacy Policy</p>
+                                            signature. Privacy Policy
+                                        </p>
                                     </div>
                                 </div>
                             </div>
