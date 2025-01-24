@@ -13,13 +13,13 @@ p {
 .small-text {
   font-weight: 300; /* Light */
 }
-
+/* Main Navbar */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #eee; /* Light gray background */
-  padding: 1rem 2rem; /* Add some padding */
+  background: #eee;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -28,8 +28,8 @@ p {
   border-radius: 2px 2px 20px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 17vh;
-  overflow: hidden; /* Prevents overflow */
 }
+
 /* Logo Section */
 .navbar-logo img {
   max-height: 50px;
@@ -39,7 +39,7 @@ p {
 
 /* Burger Button */
 .navbar-burger {
-  display: none; /* Hidden by default */
+  display: none;
   flex-direction: column;
   cursor: pointer;
   background: none;
@@ -54,7 +54,6 @@ p {
   transition: 0.3s;
 }
 
-/* Open Burger */
 .navbar-burger.active .burger-bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -76,8 +75,6 @@ p {
   align-items: center;
 }
 
-
-/* Individual Link Styles */
 .navbar-link {
   text-decoration: none;
   color: #080b1d;
@@ -87,7 +84,7 @@ p {
 }
 
 .navbar-link:hover {
-  color: #0073e6; /* Blue on hover */
+  color: #0073e6;
 }
 
 .navbar-link.active {
@@ -95,9 +92,9 @@ p {
   color: rgba(147, 204, 15, 1);
 }
 
-/* Phone Button Style */
+/* Phone Button */
 .button-header {
-  background: #93CC0F;
+  background: #93cc0f;
   width: 186px;
   height: 46px;
   display: flex;
@@ -105,7 +102,7 @@ p {
   align-items: center;
   font-size: 14px;
   color: #fff;
-  padding: 12px 26px 12px 26px;
+  padding: 12px 26px;
   border-radius: 13px;
   margin-left: 5%;
 }
@@ -113,20 +110,21 @@ p {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .navbar-burger {
-    display: flex; /* Show burger button on mobile */
+    display: flex; /* Show burger button */
   }
 
   .navbar-links {
-    display: none; /* Hide links by default */
+    display: none; /* Hide links initially */
     flex-direction: column;
     position: absolute;
     top: 100%;
-    right: 0;
-    background-color: rgba(238, 238, 238, 1);
+    left: 0;
+    background-color: #eee;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    border-radius: 20px 20px 2px 2px;
+    border-radius: 0 0 10px 10px;
+    z-index: 1000;
   }
 
   .navbar-links.open {
@@ -134,7 +132,13 @@ p {
   }
 
   .navbar-link {
-    padding: 0.5rem 0; /* Add padding to links */
+    padding: 0.5rem 0;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .button-header {
+    margin-top: 1rem;
   }
 }
 
@@ -555,7 +559,6 @@ p {
   background-repeat: no-repeat, no-repeat;
   display: block;
   width: 100%;
- 
   height: auto;
 }
 
@@ -640,11 +643,7 @@ p {
 
 @media (max-width: 768px) {
   .curve {
-
-    background-position:
-      center 2%,
-      /* Adjust for smaller screens */
-      center -2%;
+    background-position: center 2%, center -2%;
   }
 
   .curved {
@@ -667,11 +666,7 @@ p {
 /* For small screens (mobiles) */
 @media (max-width: 480px) {
   .curve {
-
-    background-position:
-      center 1%,
-      /* Adjust for smaller screens */
-      center 0%;
+    background-position: center 1%, center 0%;
   }
 
   .curved {
@@ -1415,4 +1410,80 @@ footer .bottom-details .bottom_text {
   width: 236px;
   margin-left: 5px;
   vertical-align: middle;
+}
+
+/* Video Card Styling */
+.video-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Wrapper for Aspect Ratio */
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Overlay Content */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top Green Arrow */
+.arrow-top-right {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-bottom: 40px solid #28a745; /* Green */
+  z-index: 1;
+}
+
+/* Bottom Green Arrow */
+.arrow-bottom-left {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 0;
+  height: 0;
+  border-right: 40px solid transparent;
+  border-top: 40px solid #28a745; /* Green */
+  z-index: 1;
+}
+
+/* Header Section */
+.overlay-header h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.overlay-footer p {
+  font-size: 0.875rem;
+}
+
+/* Footer Section */
+.logo-img {
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: contain;
 }

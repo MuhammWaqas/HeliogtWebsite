@@ -19,7 +19,7 @@ export default function CurvedSection() {
                     <div className="content">
                         <div data-fluid-engine="true">
                             <div className="row">
-                                <div className="col-md-6">
+                                <div className="col-12 col-md-6">
                                     <div
                                         className="sqs-block html-block sqs-block-html"
                                         data-blend-mode="NORMAL"
@@ -66,7 +66,7 @@ export default function CurvedSection() {
                                                         </p>
                                                     </li>
                                                     <li>
-                                                        <p style={{ whiteSpace: "pre-wrap", color: 'rgba(238, 238, 238, 1)', fontSize: '16px' }}>
+                                                        <p style={{ whiteSpace: "pre-wrap", color: 'rgba(238, 238 , 238, 1)', fontSize: '16px' }}>
                                                             Experienced leadership
                                                         </p>
                                                     </li>
@@ -84,10 +84,9 @@ export default function CurvedSection() {
                                     </div>
                                 </div>
 
-                                <div className="col-md-6" style={{ marginTop: '13%' }}>
-
+                                <div className="col-12 col-md-6" style={{ marginTop: '13%' }}>
                                     <div className="video-container">
-                                        <div className="styled-box" style={{ height: '50vh', width: '90%' }}>
+                                        <div className="styled-box" style={{ height: '50vh', width: '90%', margin: '0 auto' }}>
                                             <iframe
                                                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                                                 allowFullScreen
@@ -122,7 +121,6 @@ export default function CurvedSection() {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div> {/* End of row */}
                         </div>

@@ -7,7 +7,7 @@ const Header = () => {
 
   const navItems = [
     "about-us",
-    "services",
+    "services-solar",
     "gosolar",
     "financing",
     "faq",
@@ -51,10 +51,9 @@ const Header = () => {
             >
               {item.replace("-", " ").replace(/\b\w/g, (char) => char.toUpperCase())}
             </Link>
-
           );
-
         })}
+        {/* Phone Button */}
         <a
           href="tel:18664354648"
           className="navbar-link button-header"
@@ -62,8 +61,6 @@ const Header = () => {
         >
           1-866-435-4648
         </a>
-        {/* Phone Number Button */}
-
       </nav>
     </header>
   );

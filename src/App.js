@@ -24,9 +24,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Conditional rendering of Header and Footer */}
         <Routes>
-          {/* Routes that include Header and Footer */}
           <Route 
             path="/" 
             element={
