@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="content">
                     <div className="top">
                         <div className="logo-details">
-                            <img className='logo-name' src={'assets/content/right.png'} style={{ width: '40%' }} />
+                            <img className='logo-name' src={'assets/content/right.png'} style={{ width: '30%',marginLeft: '3%',marginTop: '5%' }} />
 
                         </div>
                         <div className="media-icons">
