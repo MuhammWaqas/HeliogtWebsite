@@ -557,7 +557,7 @@ p {
   background-size: cover, cover;
   background-position: center -5%, center -2%;
   background-repeat: no-repeat, no-repeat;
-  display: block;
+  display: flex;
   width: 100%;
   height: auto;
 }
