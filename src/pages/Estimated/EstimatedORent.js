@@ -1,7 +1,18 @@
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../StateManagement/Context'; // Adjust the import path as necessary
 
 export default function EstimatedORent() {
     const navigate = useNavigate();
+    const { data, setData } = useContext(AppContext); // Use context to get data
+
+    const handleSelection = (selection) => {
+        setData(prevData => ({
+            ...prevData,
+            homeOwnership: selection // Save the selection in context
+        }));
+    };
+
     return (
         <>
             <section
@@ -27,13 +38,11 @@ export default function EstimatedORent() {
                                         src="assets/content/right.png"
                                         alt="Home Image"
                                         style={{
-
                                             width: '100%',
                                             maxWidth: '154px', // Limit the image width
                                             height: '100%',
                                             maxHeight: '42px', // Limit the image height
                                             cursor: 'pointer',
-
                                         }}
                                     />
                                 </div>
@@ -99,7 +108,6 @@ export default function EstimatedORent() {
                                                 marginBottom: "15px",
                                                 fontSize: "18px",
                                                 marginTop: '8%',
-
                                             }}
                                         >
                                             About Your Home
@@ -131,7 +139,9 @@ export default function EstimatedORent() {
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
                                                     marginLeft: '23%',
+                                                    cursor: 'pointer',
                                                 }}
+                                                onClick={() => handleSelection('Rent')} // Handle rent selection
                                             >
                                                 <img
                                                     src="assets/content/rent.png"
@@ -160,7 +170,9 @@ export default function EstimatedORent() {
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
                                                     marginRight: '23%',
+                                                    cursor: 'pointer',
                                                 }}
+                                                onClick={() => handleSelection('Own')} // Handle own selection
                                             >
                                                 <img
                                                     src="assets/content/own.png"
@@ -182,7 +194,6 @@ export default function EstimatedORent() {
                                                 </span>
                                             </div>
                                         </div>
-
 
                                         {/* Next Button */}
                                         <button
@@ -209,7 +220,6 @@ export default function EstimatedORent() {
                     </div>
                 </div>
             </section>
-
         </>
-    )
+    );
 }

@@ -338,7 +338,7 @@ p {
 
 .button-elementeds {
   background: #93CC0F;
-  width: 200px;
+  width: 240px;
   height: 45px;
   display: flex;
   justify-content: center;
@@ -1488,3 +1488,7 @@ footer .bottom-details .bottom_text {
   object-fit: contain;
 }
 
+
+.accent {
+  accent-color: #77B900;
+}

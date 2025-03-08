@@ -1,7 +1,55 @@
 import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { AppContext } from '../StateManagement/Context'; // Adjust the import path as necessary
+import axios from 'axios'; // Import Axios
 
 export default function EstimatedRevolutation() {
     const navigate = useNavigate();
+    const { data, setData } = useContext(AppContext); // Use context to get data
+
+    // Local state to manage user input
+    const [userInfo, setUserInfo] = useState({
+        first_name: data.userInfo.firstName || '',
+        last_name: data.userInfo.lastName || '',
+        email: data.userInfo.email || '',
+        phone: data.userInfo.phone || '',
+        street: data.locationInfo?.street || '',
+        city: data.locationInfo?.city || '',
+        state: data.locationInfo?.state || '',
+        country: data.locationInfo?.country || '',
+        zipcode: data.locationInfo?.postalCode || '',
+        description: '',
+        lat: data.locationInfo?.geo[0] || '',
+        lon: data.locationInfo?.geo[1] || '',
+        country_iso: data.locationInfo?.country_iso || ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setUserInfo(prev => ({
+            ...prev,
+            [name]: value // Update the corresponding field in userInfo
+        }));
+    };
+
+    const handleSubmit = async () => {
+        setData(prevData => ({
+            ...prevData,
+            userInfo: userInfo // Save user info in context
+        }));
+
+        console.log('User  Info:', userInfo); // Log the user info
+
+        try {
+            // POST request to the specified URL
+            const response = await axios.post('https://kcsundial.com/api/capture', userInfo);
+            console.log('Response:', response.data); // Log the response data
+            navigate('/finalresult'); // Navigate to the next page
+        } catch (error) {
+            console.error('Error posting data:', error); // Log any errors
+        }
+    };
+
     return (
         <>
             <section
@@ -27,13 +75,11 @@ export default function EstimatedRevolutation() {
                                         src="assets/content/right.png"
                                         alt="Home Image"
                                         style={{
-
                                             width: '100%',
                                             maxWidth: '154px', // Limit the image width
                                             height: '100%',
                                             maxHeight: '42px', // Limit the image height
                                             cursor: 'pointer',
-
                                         }}
                                     />
                                 </div>
@@ -107,14 +153,17 @@ export default function EstimatedRevolutation() {
                                             Solar Contact You?
                                         </h2>
 
-                                        {/* Input Fields */}
-                                        <div style={{alignItems: 'center' }}>
-                                            {['First Name', 'Last Name', 'Phone', 'Email'].map((placeholder, index) => (
+                                        {/* Visible Input Fields */}
+                                        <div style={{ alignItems: 'center' }}>
+                                            {['first_name', 'last_name', 'phone', 'email'].map((field, index) => (
                                                 <div key={index} style={{ marginTop: '2%' }}>
                                                     <input
                                                         type="text"
+                                                        name={field} // Set the name attribute to match the state
+                                                        value={userInfo[field]} // Bind the input value to state
+                                                        onChange={handleChange} // Handle input change
                                                         className="form-control"
-                                                        placeholder={placeholder}
+                                                        placeholder={field.charAt(0).toUpperCase() + field.slice(1).replace(/_/g, ' ')} // Capitalize placeholder
                                                         style={{
                                                             width: '90%',
                                                             padding: '15px',
@@ -130,9 +179,20 @@ export default function EstimatedRevolutation() {
                                             ))}
                                         </div>
 
+                                        {/* Hidden Input Fields */}
+                                        <input type="hidden" name="street" value={userInfo.street} />
+                                        <input type="hidden" name="city" value={userInfo.city} />
+                                        <input type="hidden" name="state" value={userInfo.state} />
+                                        <input type="hidden" name="country" value={userInfo.country} />
+                                        <input type="hidden" name="zipcode" value={userInfo.zipcode} />
+                                        <input type="hidden" name="description" value={userInfo.description} />
+                                        <input type="hidden" name="lat" value={userInfo.lat} />
+                                        <input type="hidden" name="lon" value={userInfo.lon} />
+                                        <input type="hidden" name="country_iso2" value={userInfo.country_iso2} />
+
                                         {/* Next Button */}
                                         <button
-                                            onClick={() => navigate('/finalresult')}
+                                            onClick={handleSubmit} // Call the submit handler
                                             className="btn btn-success btn-lg"
                                             style={{
                                                 backgroundColor: "#77B900",
@@ -167,5 +227,5 @@ export default function EstimatedRevolutation() {
                 </div>
             </section>
         </>
-    )
+    );
 }

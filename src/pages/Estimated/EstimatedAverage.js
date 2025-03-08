@@ -1,7 +1,31 @@
 import { useNavigate } from 'react-router-dom';
+import { useState, useContext } from 'react';
+import { AppContext } from '../StateManagement/Context'; // Import the context
 
 export default function EstimatedAverage() {
     const navigate = useNavigate();
+    const { data, setData } = useContext(AppContext); // Use context to get data
+    const [averageBill, setAverageBill] = useState(data.averageBill); // Default value for the slider
+
+    const handleSliderChange = (event) => {
+        const newAverageBill = event.target.value;
+        setAverageBill(newAverageBill); // Update the average bill based on slider value
+        setData(prevData => ({
+            ...prevData,
+            averageBill: newAverageBill // Update the average bill in context
+        }));
+    };
+
+    const handleNextClick = () => {
+        // Log the average bill and other relevant data to the console
+        console.log("Average Electricity Bill:", averageBill);
+        console.log("Location Info:", data.locationInfo);
+        console.log("Building Insights:", data.buildingInsights);
+
+        // Navigate to the next page
+        navigate('/estimatedorent');
+    };
+
     return (
         <>
             <section
@@ -15,8 +39,6 @@ export default function EstimatedAverage() {
                     data-controller="SectionDivider"
                     style={{ clipPath: "url(#section-divider-65a71425e0ad583da5cbf098)" }}
                 >
-
-
                 </div>
                 <div className="content-wrapper" style={{ maxWidth: '100%', maxHeight: '100%', marginBottom: '5%' }}>
                     <div className="content">
@@ -28,13 +50,11 @@ export default function EstimatedAverage() {
                                         src="assets/content/right.png"
                                         alt="Home Image"
                                         style={{
-
                                             width: '100%',
                                             maxWidth: '154px', // Limit the image width
                                             height: '100%',
                                             maxHeight: '42px', // Limit the image height
                                             cursor: 'pointer',
-
                                         }}
                                     />
                                 </div>
@@ -61,8 +81,6 @@ export default function EstimatedAverage() {
                                                     height: "100%",
                                                     maxHeight: "707px",
                                                     overflow: "hidden",
-
-
                                                 }}
                                             >
                                                 <img
@@ -76,7 +94,6 @@ export default function EstimatedAverage() {
                                                 />
                                             </div>
                                         </div>
-
                                     </div>
 
                                     {/* Content Overlay */}
@@ -135,32 +152,23 @@ export default function EstimatedAverage() {
                                                     fontWeight: "bold",
                                                 }}
                                             >
-                                                $ 275.00
+                                                ${averageBill}
                                             </span>
-                                            <div
-                                                style={{
-                                                    flex: "1",
-                                                    marginLeft: "10px",
-                                                    background: "#E0E0E0",
-                                                    height: "10px",
-                                                    borderRadius: "5px",
-                                                    position: "relative",
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        width: "50%", // Adjust this percentage based on the value
-                                                        background: "#77B900",
-                                                        height: "100%",
-                                                        borderRadius: "5px",
-                                                    }}
-                                                />
-                                            </div>
+                                            {/* Slider Input */}
+                                            <input
+                                                type="range"
+                                                min="0"
+                                                max="500" // Set the maximum value according to your needs
+                                                value={averageBill}
+                                                onChange={handleSliderChange}
+                                                className="accent" // Add a class for styling
+                                                style={{ width: '100%' }}
+                                            />
                                         </div>
 
                                         {/* Next Button */}
                                         <button
-                                            onClick={() => navigate('/estimatedorent')}
+                                            onClick={handleNextClick} // Call the new function on click
                                             className="btn btn-success btn-lg"
                                             style={{
                                                 backgroundColor: "#77B900",
@@ -190,12 +198,10 @@ export default function EstimatedAverage() {
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </section>
         </>
-    )
+    );
 }

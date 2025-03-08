@@ -1,7 +1,18 @@
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../StateManagement/Context'; // Adjust the import path as necessary
 
 export default function EstimatedAppartment() {
     const navigate = useNavigate();
+    const { data, setData } = useContext(AppContext); // Use context to get data
+
+    const handleSelection = (selection) => {
+        setData(prevData => ({
+            ...prevData,
+            houseType: selection // Save the selected house type in context
+        }));
+    };
+
     return (
         <>
             <section
@@ -27,13 +38,11 @@ export default function EstimatedAppartment() {
                                         src="assets/content/right.png"
                                         alt="Home Image"
                                         style={{
-
                                             width: '100%',
                                             maxWidth: '154px', // Limit the image width
                                             height: '100%',
                                             maxHeight: '42px', // Limit the image height
                                             cursor: 'pointer',
-
                                         }}
                                     />
                                 </div>
@@ -99,7 +108,6 @@ export default function EstimatedAppartment() {
                                                 marginBottom: "15px",
                                                 fontSize: "18px",
                                                 marginTop: '8%',
-
                                             }}
                                         >
                                             About Your Home
@@ -118,7 +126,7 @@ export default function EstimatedAppartment() {
                                                 you have?</strong>
                                         </h2>
 
-                                        {/* Rent/Own Options */}
+                                        {/* House Type Options */}
                                         <div
                                             className="d-flex justify-content-between align-items-center"
                                             style={{
@@ -131,12 +139,13 @@ export default function EstimatedAppartment() {
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
-
+                                                    cursor: 'pointer',
                                                 }}
+                                                onClick={() => handleSelection('Apartment')} // Handle apartment selection
                                             >
                                                 <img
                                                     src="assets/content/appartement.png"
-                                                    alt="Rent"
+                                                    alt="Apartment"
                                                     style={{
                                                         width: "100%",
                                                         maxWidth: "130px",
@@ -159,12 +168,13 @@ export default function EstimatedAppartment() {
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
-
+                                                    cursor: 'pointer',
                                                 }}
+                                                onClick={() => handleSelection('Condo/Duplex')} // Handle condo/duplex selection
                                             >
                                                 <img
                                                     src="assets/content/condo.png"
-                                                    alt="Rent"
+                                                    alt="Condo/Duplex"
                                                     style={{
                                                         width: "100%",
                                                         maxWidth: "130px",
@@ -187,12 +197,13 @@ export default function EstimatedAppartment() {
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
-
+                                                    cursor: 'pointer',
                                                 }}
+                                                onClick={() => handleSelection('Mobile Home')} // Handle mobile home selection
                                             >
                                                 <img
                                                     src="assets/content/mobile_home.png"
-                                                    alt="Rent"
+                                                    alt="Mobile Home"
                                                     style={{
                                                         width: "100%",
                                                         maxWidth: "130px",
@@ -215,12 +226,13 @@ export default function EstimatedAppartment() {
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
-
+                                                    cursor: 'pointer',
                                                 }}
+                                                onClick={() => handleSelection('Single Home')} // Handle single home selection
                                             >
                                                 <img
                                                     src="assets/content/single_home.png"
-                                                    alt="Own"
+                                                    alt="Single Home"
                                                     style={{
                                                         width: "100%",
                                                         maxWidth: "130px",
@@ -239,10 +251,9 @@ export default function EstimatedAppartment() {
                                             </div>
                                         </div>
 
-
                                         {/* Next Button */}
                                         <button
-                                        onClick={() => navigate('/estimatedrevolutation')}
+                                            onClick={() => navigate('/estimatedrevolutation')}
                                             className="btn btn-success btn-lg"
                                             style={{
                                                 backgroundColor: "#77B900",
@@ -265,7 +276,6 @@ export default function EstimatedAppartment() {
                     </div>
                 </div>
             </section>
-
         </>
-    )
+    );
 }

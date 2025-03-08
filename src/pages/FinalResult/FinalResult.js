@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../StateManagement/Context'; // Adjust the import path as necessary
 import BoxesNext from './BoxesNext';
 import SolarEstimated from './SolarEstimated';
 import Graph from './Graph';
 import Footer from './Footer';
 
 export default function EstimatedFinalPage() {
+    const { data } = useContext(AppContext); // Use context to get data
+
+    // Extracting data from context
+    const { locationInfo, buildingInsights, averageBill, homeOwnership, houseType, userInfo } = data;
+
     return (
         <>
             <section style={{ position: 'relative', height: '100vh' }}>
@@ -30,6 +36,19 @@ export default function EstimatedFinalPage() {
                                 <div className="fe-block fe-block-6306b61e05bbd64a751c5451">
                                     <div className="sqs-html-content">
                                         <div className="parent-container" style={{ position: 'relative', height: '300px' }}>
+                                           {/* Display User Information */}
+                                           <div style={{textAlign: 'left', color: '#fff' }}>
+                                                <h3>Your Information:</h3>
+                                                <p><strong>Location:</strong> {locationInfo ? `${locationInfo.street} ${locationInfo.streetNumber}, ${locationInfo.city}, ${locationInfo.state} ${locationInfo.postalCode}, ${locationInfo.country_iso || 'USA'}` : "Location not provided"}</p>
+                                                <p><strong>First Name:</strong> {userInfo.first_name}</p>
+                                                <p><strong>Last Name:</strong> {userInfo.last_name}</p>
+                                                <p><strong>Phone:</strong> {userInfo.phone}</p>
+                                                <p><strong>Email:</strong> {userInfo.email}</p>
+                                                <p><strong>Home Ownership:</strong> {homeOwnership}</p>
+                                                <p><strong>House Type:</strong> {houseType}</p>
+                                                <p><strong>Average Bill:</strong> ${averageBill}</p>
+                                            </div>
+
                                             <div style={{ marginTop: '-8%' }}>
                                                 <img src={'assets/content/favicon-196x196.png'} alt="Favicon" style={{ maxWidth: '100%', height: 'auto' }} />
                                             </div>
@@ -73,5 +92,5 @@ export default function EstimatedFinalPage() {
             <Graph />
             <Footer />
         </>
-    )
+    );
 }
