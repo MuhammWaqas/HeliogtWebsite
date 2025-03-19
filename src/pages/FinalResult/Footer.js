@@ -17,7 +17,7 @@ export default function Footer() {
                                 <div className="col-md-5">
                                     <div className="logo">
 
-                                        <img src="assets/content/right.png" alt="Logo" />
+                                        <img src="../assets/content/right.png" alt="Logo" />
                                     </div>
                                 </div>
                                 <div className="col-md-7">

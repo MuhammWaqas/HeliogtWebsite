@@ -32,7 +32,7 @@ export default function BoxesNext() {
                                             }}>
                                             <div className="sqs-block-content">
                                                 <div className="sqs-html-content">
-                                                    <img src={'assets/content/box_f.png'}
+                                                    <img src={'../assets/content/box_f.png'}
                                                          style={{ marginTop: '8%',width: '100%',maxWidth: '130px',height: '100%',maxHeight: '115px', }} />
 
                                                     <p style={{ whiteSpace: "pre-wrap", textAlign: 'center', marginTop: '10%' }}>
@@ -79,7 +79,7 @@ export default function BoxesNext() {
                                             }}>
 
                                             <div className="sqs-html-content">
-                                                <img src={'assets/content/boxf_1.png'}
+                                                <img src={'../assets/content/boxf_1.png'}
                                                      style={{ marginTop: '8%',width: '100%',maxWidth: '130px',height: '100%',maxHeight: '115px', }} />
 
                                                 <p style={{ whiteSpace: "pre-wrap", textAlign: 'center', marginTop: '10%' }}>
@@ -124,7 +124,7 @@ export default function BoxesNext() {
                                             }}>
                                             <div className="sqs-block-content">
                                                 <div className="sqs-html-content">
-                                                    <img src={'assets/content/boxf_2.png'}
+                                                    <img src={'../assets/content/boxf_2.png'}
                                                         style={{ marginTop: '8%',width: '100%',maxWidth: '130px',height: '100%',maxHeight: '115px', }} />
 
                                                     <p style={{ whiteSpace: "pre-wrap", textAlign: 'center', marginTop: '10%' }}>

@@ -1492,3 +1492,13 @@ footer .bottom-details .bottom_text {
 .accent {
   accent-color: #77B900;
 }
+
+.card.selected {
+  border-color: lightblue; /* Change border color when selected */
+  box-shadow: 0 0 10px lightblue; /* Optional: Add a shadow effect */
+}
+
+.card:hover {
+  border-color: lightblue; /* Change border color on hover */
+  box-shadow: 0 0 10px lightblue; /* Optional: Add a shadow effect */
+}

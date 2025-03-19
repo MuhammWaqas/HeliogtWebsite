@@ -158,7 +158,7 @@ function App() {
           <Route path="/estimatedorent" element={<EstimatedORent />} />
           <Route path="/estimatedappartment" element={<EstimatedAppartment />} />
           <Route path="/estimatedrevolutation" element={<EstimatedRevolutation />} />
-          <Route path="/finalresult" element={<FinalResult />} />
+          <Route path="/finalresult/:userId" element={<FinalResult />} />
         </Routes>
       </div>
     </Router>

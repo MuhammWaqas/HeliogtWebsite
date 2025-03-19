@@ -1,16 +1,27 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AppContext } from '../StateManagement/Context'; // Adjust the import path as necessary
 
 export default function EstimatedORent() {
     const navigate = useNavigate();
     const { data, setData } = useContext(AppContext); // Use context to get data
+    const [selectedOption, setSelectedOption] = useState(null); // State to track selected option
 
     const handleSelection = (selection) => {
+        setSelectedOption(selection); // Save the selection in state
         setData(prevData => ({
             ...prevData,
-            homeOwnership: selection // Save the selection in context
+            housecat: selection // Save the selection in context
         }));
+    };
+
+    const handleNextClick = () => {
+        // Check if an option is selected
+        if (!selectedOption) {
+            alert("Please select whether you own or rent your home before proceeding."); // Alert the user
+            return; // Prevent navigation
+        }
+        navigate('/estimatedappartment'); // Navigate to the next page
     };
 
     return (
@@ -133,13 +144,14 @@ export default function EstimatedORent() {
                                             }}
                                         >
                                             <div
-                                                className="card d-flex flex-column align-items-center p-3"
+                                                className={`card d-flex flex-column align-items-center p-3 ${selectedOption === 'Rent' ? 'selected' : ''}`}
                                                 style={{
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
                                                     marginLeft: '23%',
                                                     cursor: 'pointer',
+                                                    transition: 'border-color 0.3s',
                                                 }}
                                                 onClick={() => handleSelection('Rent')} // Handle rent selection
                                             >
@@ -164,13 +176,14 @@ export default function EstimatedORent() {
                                             </div>
 
                                             <div
-                                                className="card d-flex flex-column align-items-center p-3"
+                                                className={`card d-flex flex-column align-items-center p-3 ${selectedOption === 'Own' ? 'selected' : ''}`}
                                                 style={{
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
                                                     marginRight: '23%',
                                                     cursor: 'pointer',
+                                                    transition: 'border-color 0.3s',
                                                 }}
                                                 onClick={() => handleSelection('Own')} // Handle own selection
                                             >
@@ -197,7 +210,7 @@ export default function EstimatedORent() {
 
                                         {/* Next Button */}
                                         <button
-                                            onClick={() => navigate('/estimatedappartment')}
+                                            onClick={handleNextClick} // Call the new function on click
                                             className="btn btn-success btn-lg"
                                             style={{
                                                 backgroundColor: "#77B900",

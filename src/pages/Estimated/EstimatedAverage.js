@@ -17,6 +17,12 @@ export default function EstimatedAverage() {
     };
 
     const handleNextClick = () => {
+        // Check if the average bill is set
+        if (averageBill <= 0) {
+            alert("Please select a valid average electricity bill before proceeding."); // Alert the user
+            return; // Prevent navigation
+        }
+
         // Log the average bill and other relevant data to the console
         console.log("Average Electricity Bill:", averageBill);
         console.log("Location Info:", data.locationInfo);

@@ -1,16 +1,27 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AppContext } from '../StateManagement/Context'; // Adjust the import path as necessary
 
 export default function EstimatedAppartment() {
     const navigate = useNavigate();
     const { data, setData } = useContext(AppContext); // Use context to get data
+    const [selectedOption, setSelectedOption] = useState(null); // State to track selected option
 
     const handleSelection = (selection) => {
+        setSelectedOption(selection); // Save the selection in state
         setData(prevData => ({
             ...prevData,
-            houseType: selection // Save the selected house type in context
+            housetype: selection // Save the selected house type in context
         }));
+    };
+
+    const handleNextClick = () => {
+        // Check if an option is selected
+        if (!selectedOption) {
+            alert("Please select a house type before proceeding."); // Alert the user
+            return; // Prevent navigation
+        }
+        navigate('/estimatedrevolutation'); // Navigate to the next page
     };
 
     return (
@@ -134,12 +145,13 @@ export default function EstimatedAppartment() {
                                             }}
                                         >
                                             <div
-                                                className="card d-flex flex-column align-items-center p-3"
+                                                className={`card d-flex flex-column align-items-center p-3 ${selectedOption === 'Apartment' ? 'selected' : ''}`}
                                                 style={{
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
                                                     cursor: 'pointer',
+                                                    transition: 'border-color 0.3s',
                                                 }}
                                                 onClick={() => handleSelection('Apartment')} // Handle apartment selection
                                             >
@@ -163,12 +175,13 @@ export default function EstimatedAppartment() {
                                                 </span>
                                             </div>
                                             <div
-                                                className="card d-flex flex-column align-items-center p-3"
+                                                className={`card d-flex flex-column align-items-center p-3 ${selectedOption === 'Condo/Duplex' ? 'selected' : ''}`}
                                                 style={{
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
                                                     cursor: 'pointer',
+                                                    transition: 'border-color 0.3s',
                                                 }}
                                                 onClick={() => handleSelection('Condo/Duplex')} // Handle condo/duplex selection
                                             >
@@ -192,12 +205,13 @@ export default function EstimatedAppartment() {
                                                 </span>
                                             </div>
                                             <div
-                                                className="card d-flex flex-column align-items-center p-3"
+                                                className={`card d-flex flex-column align-items-center p-3 ${selectedOption === 'Mobile Home' ? 'selected' : ''}`}
                                                 style={{
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
                                                     cursor: 'pointer',
+                                                    transition: 'border-color 0.3s',
                                                 }}
                                                 onClick={() => handleSelection('Mobile Home')} // Handle mobile home selection
                                             >
@@ -221,12 +235,13 @@ export default function EstimatedAppartment() {
                                                 </span>
                                             </div>
                                             <div
-                                                className="card d-flex flex-column align-items-center p-3"
+                                                className={`card d-flex flex-column align-items-center p-3 ${selectedOption === 'Single Home' ? 'selected' : ''}`}
                                                 style={{
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",
                                                     marginBottom: "20px",
                                                     cursor: 'pointer',
+                                                    transition: 'border-color 0.3s',
                                                 }}
                                                 onClick={() => handleSelection('Single Home')} // Handle single home selection
                                             >
@@ -253,7 +268,7 @@ export default function EstimatedAppartment() {
 
                                         {/* Next Button */}
                                         <button
-                                            onClick={() => navigate('/estimatedrevolutation')}
+                                            onClick={handleNextClick} // Call the new function on click
                                             className="btn btn-success btn-lg"
                                             style={{
                                                 backgroundColor: "#77B900",

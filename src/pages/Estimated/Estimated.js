@@ -1,8 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useRef, useContext } from 'react';
 import Autocomplete from 'react-google-autocomplete';
-import { GoogleMap, LoadScript, Circle } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Circle, Marker, InfoWindow } from '@react-google-maps/api';
 import { AppContext } from '../StateManagement/Context'; // Import the context
+
+// Define libraries outside of the component
+const libraries = ['places'];
 
 export default function Estimated() {
     const navigate = useNavigate();
@@ -11,7 +14,21 @@ export default function Estimated() {
     const [mapCenter, setMapCenter] = useState({ lat: 37.7749, lng: -122.4194 });
     const [isAddressSelected, setIsAddressSelected] = useState(false);
     const apiKey = "AIzaSyAz5z8de2mOowIGRREyHc3gT1GgmJ3whDg"; // Replace with your actual API key
-    const libraries = ['places'];
+
+    // State variables for results
+    const [resultPanelCount, setResultPanelCount] = useState('');
+    const [resultYearlyEnergy, setResultYearlyEnergy] = useState('');
+    const [resultMaxPanel, setResultMaxPanel] = useState('');
+    const [resultRoofArea, setResultRoofArea] = useState('');
+    const [resultCO2, setResultCO2] = useState('');
+    const [resultSunshine, setResultSunshine] = useState('');
+    const [sqrFeet, setSqrFeet] = useState('');
+
+    // State for marker and info window
+    const [markerPosition, setMarkerPosition] = useState(null);
+    const [showInfoWindow, setShowInfoWindow] = useState(false);
+    const [circleCenter, setCircleCenter] = useState(null); // Center of the circle
+    const [circleRadius, setCircleRadius] = useState(100); // Default radius
 
     const handlePlaceSelected = async (place) => {
         const addressComponents = place.address_components;
@@ -21,7 +38,7 @@ export default function Estimated() {
         const locationData = {
             geo: [lat, lng],
             country: addressComponents.find(component => component.types.includes("country"))?.long_name || null,
-            country_iso: addressComponents.find(component => component.types.includes("country"))?.short_name || null, // Corrected line
+            country_iso: addressComponents.find(component => component.types.includes("country"))?.short_name || null,
             state: addressComponents.find(component => component.types.includes("administrative_area_level_1"))?.long_name || null,
             city: addressComponents.find(component => component.types.includes("locality"))?.long_name || null,
             postalCode: addressComponents.find(component => component.types.includes("postal_code"))?.long_name || null,
@@ -31,6 +48,7 @@ export default function Estimated() {
 
         setMapCenter({ lat, lng });
         setIsAddressSelected(true);
+        setMarkerPosition({ lat, lng }); // Set marker position
 
         // Update context with location info
         setData(prevData => ({
@@ -44,6 +62,17 @@ export default function Estimated() {
                 ...prevData,
                 buildingInsights: insights,
             }));
+
+            // Update the results in the state
+            updateResults(insights);
+
+            // Set circle center and radius
+            const closestBuilding = insights.closestBuilding;
+            setCircleCenter({
+                lat: closestBuilding.geo[0],
+                lng: closestBuilding.geo[1]
+            });
+            setCircleRadius(closestBuilding.radius || 100); // Set radius from insights
         } catch (error) {
             console.error("Error fetching building insights:", error);
         }
@@ -64,13 +93,67 @@ export default function Estimated() {
         return content;
     }
 
+    const updateResults = (buildingInsights) => {
+        let panelCapacityWattsInput = 250;
+        let dcToAcDerateInput = 0.85;
+        let monthlyAverageEnergyBillInput = 300;
+        let energyCostPerKwhInput = 0.31;
+        let yearlyKwhEnergyConsumption = (monthlyAverageEnergyBillInput / energyCostPerKwhInput) * 12;
+        const solarPotential = buildingInsights.solarPotential;
+        const defaultPanelCapacity = buildingInsights.solarPotential.panelCapacityWatts;
+        const panelCapacityRatio = panelCapacityWattsInput / defaultPanelCapacity;
+        const haji = panelCapacityRatio * dcToAcDerateInput;
+        const yearlymax = yearlyKwhEnergyConsumption / haji;
+        let config;
+
+        function findPanelsCount(buildingInsights, yearlymax) {
+            const solarPanelConfigs = buildingInsights.solarPotential.solarPanelConfigs;
+            for (let i = 0; i < solarPanelConfigs.length; i++) {
+                config = solarPanelConfigs[i];
+                if (config.yearlyEnergyDcKwh >= yearlymax) { return config.panelsCount; }
+            }
+        }
+
+        const panelsCount = findPanelsCount(buildingInsights, yearlymax);
+
+        // Calculate total yearly energy and other metrics
+        const totalYearlyEnergy = solarPotential.solarPanelConfigs.reduce((acc, config) => acc + config.yearlyEnergyDcKwh, 0);
+        const maxPanelCount = solarPotential.solarPanels.length;
+
+        // Update state variables
+        setResultPanelCount(panelsCount);
+        setResultYearlyEnergy(config ? (config.yearlyEnergyDcKwh * panelCapacityRatio) + ' KWh' : 'N/A');
+        setResultMaxPanel(maxPanelCount);
+        setResultRoofArea(solarPotential.wholeRoofStats.areaMeters2 + ' m²');
+        setResultCO2(solarPotential.carbonOffsetFactorKgPerMwh + ' Kg/MWh');
+        setResultSunshine(solarPotential.maxSunshineHoursPerYear);
+        setSqrFeet(solarPotential.wholeRoofStats.areaMeters2);
+
+        // Additional data updates
+        setData(prevData => ({
+            ...prevData,
+            postalCode: buildingInsights.postalCode,
+            administrativeArea: buildingInsights.administrativeArea,
+            regionCode: buildingInsights.regionCode,
+            city: buildingInsights.administrativeArea,
+            latitude: buildingInsights.center.latitude,
+            longitude: buildingInsights.center.longitude,
+        }));
+
+        if (maxPanelCount > 0) {
+            document.getElementById('gform_submit_button_1').disabled = false;
+        } else {
+            alert('No insight available for this address, please enter a valid address');
+        }
+    };
+
     const handleSubmit = () => {
         if (isAddressSelected) {
             console.log("Location Info:", data.locationInfo);
             console.log("Building Insights:", data.buildingInsights);
             navigate('/estimatedaddress', {
                 state: {
-                    address: `${data.locationInfo.street} ${data.locationInfo.streetNumber}, ${data.locationInfo.city}, ${data.locationInfo.state} ${data.locationInfo.postalCode}, USA`,
+                    address: `${data.locationInfo.street} ${data.locationInfo.streetNumber}, ${data.locationInfo.city}, ${data.locationInfo.state} ${data.locationInfo.postalCode}, ${data.locationInfo.country}`,
                     lat: data.locationInfo.geo[0],
                     lng: data.locationInfo.geo[1],
                 }
@@ -167,19 +250,37 @@ export default function Estimated() {
                                 >
                                     {data.locationInfo && (
                                         <>
-                                            {data.buildingInsights && data.buildingInsights.closestBuilding && (
+                                            {markerPosition && (
+                                                <Marker
+                                                    position={markerPosition}
+                                                    onClick={() => setShowInfoWindow(true)} // Show info window on marker click
+                                                />
+                                            )}
+                                            {showInfoWindow && markerPosition && (
+                                                <InfoWindow
+                                                    position={markerPosition}
+                                                    onCloseClick={() => setShowInfoWindow(false)} // Close info window
+                                                >
+                                                    <div>
+                                                        <h4>Solar Insights</h4>
+                                                        <p>Panel Count: {resultPanelCount}</p>
+                                                        <p>Yearly Energy: {resultYearlyEnergy}</p>
+                                                        <p>Max Panel: {resultMaxPanel}</p>
+                                                        <p>Roof Area: {resultRoofArea}</p>
+                                                        <p>CO2 Offset: {resultCO2}</p>
+                                                        <p>Sunshine Hours: {resultSunshine}</p>
+                                                        <p>Square Feet: {sqrFeet}</p>
+                                                    </div>
+                                                </InfoWindow>
+                                            )}
+                                            {circleCenter && (
                                                 <Circle
-                                                    center={{
-                                                        lat: data.buildingInsights.closestBuilding.geo[0],
-                                                        lng: data.buildingInsights.closestBuilding.geo[1]
-                                                    }}
-                                                    radius={data.buildingInsights.closestBuilding.radius || 100}
+                                                    center={circleCenter}
+                                                    radius={circleRadius}
                                                     options={{
-                                                        strokeColor: '#FF0000',
-                                                        strokeOpacity: 0.8,
+                                                        fillColor: 'rgba(255, 0, 0, 0.2)',
+                                                        strokeColor: 'rgba(255, 0, 0, 0.5)',
                                                         strokeWeight: 2,
-                                                        fillColor: '#FF0000',
-                                                        fillOpacity: 0.35,
                                                     }}
                                                 />
                                             )}
