@@ -34,7 +34,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: #eee;
   padding: 1rem 2rem;
   position: sticky;
@@ -44,8 +44,7 @@ p {
   margin-left: 1%;
   border-radius: 2px 2px 20px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: auto;
-  max-height: 40vh !important;
+  height: 18vh;
 }
 
 /* Logo Section */
@@ -1552,9 +1551,48 @@ footer .bottom-details .bottom_text {
   /* Change background on hover */
 }
 
-.dropdown-menu.show {
+.dropdown-menu {
   margin-top: 5%;
-  margin-left: -30%;
+
+}
+
+@media screen and (min-width: 992px) {
+  
+    .dropdown-menu {
+      line-height: initial;
+     
+    }
+  
+  .dropdown {
+    .dropdown-menu {
+      display: none;
+    }
+  }
+  .dropdown,
+  .dropend {
+    &:hover {
+      & > .dropdown-menu {
+        display: block;
+      }
+    }
+  }
+  .dropdown {
+    &:hover {
+      & > .dropdown-menu {
+        margin-top: -.5rem;
+      }
+    }
+  }
+  .dropend {
+    &:hover {
+      & > .dropdown-menu {
+        position: absolute;
+        top: -.5rem;
+        left: 100%;
+        margin-left: 0;
+      }
+    }
+  }
 }
 
 .dropdown-item {

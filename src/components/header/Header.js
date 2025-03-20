@@ -75,7 +75,7 @@ const Header = () => {
                 >
                   {item.name}
                 </Link>
-                <div className={`dropdown-menu ${isAboutUsOpen ? "show" : ""}`} aria-labelledby="navbarDropdown">
+                <div  className={`dropdown-menu ${isAboutUsOpen ? "show" : ""}`} aria-labelledby="navbarDropdown">
                   {aboutUsSubItems.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
