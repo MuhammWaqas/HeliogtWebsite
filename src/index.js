@@ -1,8 +1,6 @@
 // index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { AppProvider } from './pages/StateManagement/Context'; // Adjust the import path as necessary
 import './index.css';
 import App from './App';
