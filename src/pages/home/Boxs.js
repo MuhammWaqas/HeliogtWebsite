@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Boxs() {
+    useEffect(() => {
+            AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+        }, []);
+
     return (
-        <div>
+        <div data-aos="fade-right">
             <section className="page-section">
                 <div className="section-border" data-controller="SectionDivider" style={{ clipPath: "url(#section-divider-65a6b757d33ea3703d6aa7aa)" }}>
                     <div className="section-background"></div>

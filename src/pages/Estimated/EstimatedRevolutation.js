@@ -1,9 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
-import { AppContext } from '../StateManagement/Context'; // Adjust the import path as necessary
-import axios from 'axios'; // Import Axios
+import { AppContext } from '../StateManagement/Context';
+import axios from 'axios';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function EstimatedRevolutation() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     const navigate = useNavigate();
     const { data, setData } = useContext(AppContext); // Use context to get data
 
@@ -33,12 +39,12 @@ export default function EstimatedRevolutation() {
         yenergy: 0, // Initialize to 0
         sqfeet: data.buildingInsights?.solarPotential?.wholeRoofStats?.areaMeters2 || '',
         average_bill: data.averageBill || '275', // Use the average bill from context or default to 275
-       
+
     });
 
     useEffect(() => {
         const solarPanelConfigs = data.buildingInsights?.solarPotential?.solarPanelConfigs || [];
-        
+
         // Calculate total panel count and yearly energy
         const totalPanelCount = solarPanelConfigs.reduce((total, config) => total + config.panelsCount, 0);
         const totalYearlyEnergy = solarPanelConfigs.reduce((total, config) => total + (config.yearlyEnergyDcKwh || 0), 0);
@@ -61,7 +67,7 @@ export default function EstimatedRevolutation() {
     const handleSubmit = async () => {
         setData(prevData => ({
             ...prevData,
-            userInfo: userInfo 
+            userInfo: userInfo
         }));
 
         console.log('User Info before API call:', userInfo);
@@ -107,7 +113,7 @@ export default function EstimatedRevolutation() {
                                 </div>
                             </div>
                             <div className="container-fluid">
-                                <div className="row justify-content-center align-items-center" style={{ height: "100vh", position: "relative" }}>
+                                <div className="row  justify-content-center align-items-center"  style={{ height: "100vh", position: "relative" }}>
                                     <div className="col-12">
                                         <div className="d-flex justify-content-center align-items-center" style={{ width: "100%", height: "100vh" }}>
                                             <div className="position-relative" style={{ width: "100%", maxWidth: "807px", height: "100%", maxHeight: "707px", overflow: "hidden" }}>
@@ -117,7 +123,7 @@ export default function EstimatedRevolutation() {
                                     </div>
 
                                     {/* Content Overlay */}
-                                    <div className="col-lg-6 col-md-8 col-sm-10 position-absolute text-center" style={{ top: "50%", transform: "translateY(-50%)", background: "rgba(255, 255, 255, 0.3)", width: "90%", maxWidth: "691px", height: 'auto', maxHeight: '600px', borderRadius: "12px", border: "2px solid #77B900", overflow: "hidden", padding: '20px' }}>
+                                    <div className="col-lg-6 col-md-8 col-sm-10 position-absolute text-center" data-aos="fade-down" style={{ top: "50%", transform: "translateY(-50%)", background: "rgba(255, 255, 255, 0.3)", width: "90%", maxWidth: "691px", height: 'auto', maxHeight: '600px', borderRadius: "12px", border: "2px solid #77B900", overflow: "hidden", padding: '20px' }}>
                                         {/* Main Heading */}
                                         <h2 style={{ fontWeight: "bold", fontSize: "2rem", marginBottom: "30px", color: '#fff', marginTop: '5%' }}>
                                             How Can Revolution <br />

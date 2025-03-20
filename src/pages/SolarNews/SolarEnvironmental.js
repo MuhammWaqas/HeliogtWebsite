@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SolarEnvironmental() {
     return (
@@ -73,8 +74,7 @@ export default function SolarEnvironmental() {
                                         water usage.
 
                                     </p>
-                                    <a class="blog-more-link" href="/"
-                                        style={{ marginTop: '3%' }}>Read More</a>
+                                    <Link to="/environmental-concerns" className="blog-more-link" style={{ marginTop: '3%' }}>Read More</Link>
                                 </div>
                             </div>
                         </div>
@@ -116,8 +116,7 @@ export default function SolarEnvironmental() {
                                         towards a common goal, we can create a brighter and more sustai-
                                         nable future for all.
                                     </p>
-                                    <a class="blog-more-link" href="/"
-                                        style={{ marginTop: '3%' }}>Read More</a>
+                                    <Link to="/how-green" className="blog-more-link" style={{ marginTop: '3%' }}>Read More</Link>
                                 </div>
                             </div>
                             <div
@@ -216,8 +215,7 @@ export default function SolarEnvironmental() {
                                         with for all your solar needs.
 
                                     </p>
-                                    <a class="blog-more-link" href="/"
-                                        style={{ marginTop: '3%' }}>Read More</a>
+                                    <Link to="/goingsolar-case" className="blog-more-link" style={{ marginTop: '3%' }}>Read More</Link>
                                 </div>
                             </div>
                         </div>

@@ -1,8 +1,14 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import { AppContext } from '../StateManagement/Context'; // Adjust the import path as necessary
+import { useContext, useState, useEffect } from 'react';
+import { AppContext } from '../StateManagement/Context';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function EstimatedORent() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     const navigate = useNavigate();
     const { data, setData } = useContext(AppContext); // Use context to get data
     const [selectedOption, setSelectedOption] = useState(null); // State to track selected option
@@ -96,7 +102,7 @@ export default function EstimatedORent() {
                                     </div>
 
                                     {/* Content Overlay */}
-                                    <div
+                                    <div data-aos="fade-up"
                                         className="col-lg-6 col-md-8 col-sm-10 position-absolute text-center"
                                         style={{
                                             top: "50%",

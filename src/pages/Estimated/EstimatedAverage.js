@@ -1,8 +1,14 @@
 import { useNavigate } from 'react-router-dom';
-import { useState, useContext } from 'react';
-import { AppContext } from '../StateManagement/Context'; // Import the context
+import { useState, useContext, useEffect } from 'react';
+import { AppContext } from '../StateManagement/Context';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function EstimatedAverage() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     const navigate = useNavigate();
     const { data, setData } = useContext(AppContext); // Use context to get data
     const [averageBill, setAverageBill] = useState(data.averageBill); // Default value for the slider
@@ -71,7 +77,7 @@ export default function EstimatedAverage() {
                                     style={{ height: "100vh", position: "relative" }}
                                 >
                                     {/* Background Image */}
-                                    <div className="col-12">
+                                    <div className="col-12" data-aos="fade-up">
                                         <div
                                             className="d-flex justify-content-center align-items-center"
                                             style={{

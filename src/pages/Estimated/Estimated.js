@@ -1,13 +1,19 @@
 import { useNavigate } from 'react-router-dom';
-import { useState, useRef, useContext } from 'react';
+import { useState, useRef, useContext, useEffect } from 'react';
 import Autocomplete from 'react-google-autocomplete';
 import { GoogleMap, LoadScript, Circle, Marker, InfoWindow } from '@react-google-maps/api';
-import { AppContext } from '../StateManagement/Context'; // Import the context
+import { AppContext } from '../StateManagement/Context';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Define libraries outside of the component
 const libraries = ['places'];
 
 export default function Estimated() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     const navigate = useNavigate();
     const dropdownRef = useRef(null);
     const { data, setData } = useContext(AppContext); // Use context
@@ -183,7 +189,7 @@ export default function Estimated() {
                             </div>
                         </div>
                         <div className="row" style={{ display: 'flex', alignItems: 'stretch' }}>
-                            <div className="col-md-6" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100vh' }}>
+                            <div className="col-md-6" data-aos="fade-up" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100vh' }}>
                                 <div className="sqs-html-content">
                                     <h3 style={{ whiteSpace: 'pre-wrap', fontSize: '36px', fontWeight: '600' }}>
                                         HOW Much Your<br />SOLAR will COST
@@ -238,7 +244,7 @@ export default function Estimated() {
                                 </div>
                             </div>
 
-                            <div className="col-md-6 styled-box" style={{ height: '100vh' }}>
+                            <div className="col-md-6 styled-box" data-aos="fade-down" style={{ height: '100vh' }}>
                                 <GoogleMap
                                     mapContainerStyle={{ height: '100%', width: '100%' }}
                                     center={mapCenter}

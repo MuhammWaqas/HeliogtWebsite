@@ -1,23 +1,40 @@
-h1, h2, h3, h4, h5, h6, p, a, div, span, button, input, textarea {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+div,
+span,
+button,
+input,
+textarea {
   font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-  font-weight: 700; /* Bold */
+  font-weight: 700;
+  /* Bold */
 }
 
 p {
-  font-weight: 400; /* Normal */
+  font-weight: 400;
+  /* Normal */
 }
 
 .small-text {
-  font-weight: 300; /* Light */
+  font-weight: 300;
+  /* Light */
 }
+
 /* Main Navbar */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
   background: #eee;
   padding: 1rem 2rem;
   position: sticky;
@@ -27,7 +44,8 @@ p {
   margin-left: 1%;
   border-radius: 2px 2px 20px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 17vh;
+  height: auto;
+  max-height: 40vh !important;
 }
 
 /* Logo Section */
@@ -110,11 +128,13 @@ p {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .navbar-burger {
-    display: flex; /* Show burger button */
+    display: flex;
+    /* Show burger button */
   }
 
   .navbar-links {
-    display: none; /* Hide links initially */
+    display: none;
+    /* Hide links initially */
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -128,7 +148,8 @@ p {
   }
 
   .navbar-links.open {
-    display: flex; /* Show links when burger is active */
+    display: flex;
+    /* Show links when burger is active */
   }
 
   .navbar-link {
@@ -443,7 +464,7 @@ p {
   padding: 12px 26px 12px 26px;
   border-radius: 13px;
   margin-top: 5%;
- 
+
 }
 
 .sqs-block-html a,
@@ -553,7 +574,7 @@ p {
   overflow: hidden;
 } */
 .curve {
-  background-image: url('../content/bg_exp1.png'), url('../content/bg_exp.png');
+  background-image: url('../content/solar_footer.webp'), url('../content/bg_exp.png');
   background-size: cover, cover;
   background-position: center -5%, center -2%;
   background-repeat: no-repeat, no-repeat;
@@ -1349,11 +1370,13 @@ footer .bottom-details .bottom_text {
   width: 600px;
   margin: auto;
 }
+
 #range-slider .range-slider__thumb[data-lower] {
-    width: 0;
+  width: 0;
 }
+
 #range-slider .range-slider__range {
-    border-radius: 6px;
+  border-radius: 6px;
 }
 
 .hero {
@@ -1423,7 +1446,8 @@ footer .bottom-details .bottom_text {
 /* Video Wrapper for Aspect Ratio */
 .video-wrapper {
   position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
 }
 
 .video-frame {
@@ -1455,7 +1479,8 @@ footer .bottom-details .bottom_text {
   width: 0;
   height: 0;
   border-left: 40px solid transparent;
-  border-bottom: 40px solid #28a745; /* Green */
+  border-bottom: 40px solid #28a745;
+  /* Green */
   z-index: 1;
 }
 
@@ -1467,7 +1492,8 @@ footer .bottom-details .bottom_text {
   width: 0;
   height: 0;
   border-right: 40px solid transparent;
-  border-top: 40px solid #28a745; /* Green */
+  border-top: 40px solid #28a745;
+  /* Green */
   z-index: 1;
 }
 
@@ -1494,11 +1520,129 @@ footer .bottom-details .bottom_text {
 }
 
 .card.selected {
-  border-color: lightblue; /* Change border color when selected */
-  box-shadow: 0 0 10px lightblue; /* Optional: Add a shadow effect */
+  border-color: lightblue;
+  /* Change border color when selected */
+  box-shadow: 0 0 10px lightblue;
+  /* Optional: Add a shadow effect */
 }
 
 .card:hover {
-  border-color: lightblue; /* Change border color on hover */
-  box-shadow: 0 0 10px lightblue; /* Optional: Add a shadow effect */
+  border-color: lightblue;
+  /* Change border color on hover */
+  box-shadow: 0 0 10px lightblue;
+  /* Optional: Add a shadow effect */
+}
+
+.submenu {
+  display: block;
+  /* Show submenu */
+  padding-left: 20px;
+  /* Indent submenu items */
+}
+
+.submenu-link {
+  display: block;
+  /* Make submenu items block elements */
+  padding: 5px 0;
+  /* Add some padding */
+}
+
+.submenu-link:hover {
+  background-color: #f8f9fa;
+  /* Change background on hover */
+}
+
+.dropdown-menu.show {
+  margin-top: 5%;
+  margin-left: -30%;
+}
+
+.dropdown-item {
+  text-decoration: none;
+  color: #080b1d !important;
+  font-weight: 400 !important;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.3s;
+  font-size: 14px;
+}
+
+.testimonial {
+  background: linear-gradient(135deg, rgb(13, 22, 77) 0%, rgb(73, 85, 150) 100%);
+  padding: 30px;
+  border-radius: 5px;
+  color: white;
+  width: 97%;
+  flex: 1;
+}
+
+.testimonial-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: gray;
+  margin: 1rem auto;
+}
+
+.testimonial-name {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.testimonial-rating {
+  color: #6ab04c;
+  margin-bottom: 20px;
+}
+
+/* Add this to create space between cards */
+.carousel-item {
+  margin: 10px;
+  /* Adjust the margin as needed */
+}
+
+.product-box {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template:
+    "1fr 1fr 1fr 1fr 1fr" 33.33vh
+    "1fr 1fr 1fr 1fr 1fr" 33.33vh
+    "1fr 1fr 1fr 1fr 1fr" 33.33vh;
+  box-shadow: 0px 0px 13px 0px rgba(255, 255, 255, 0.4);
+}
+
+.product-opacity {
+ 
+  position: absolute;
+  box-shadow: inset 10px 10px 0px 171px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.product-box:hover > .product-opacity {
+  box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+.product-content {
+  margin-top: 35%;
+  opacity: 0;
+  transition: 0.8s;
+  background-color: rgba(255, 255, 255, 0.48);
+  padding: 8px 40px;
+  position: relative;
+}
+
+.product-content p {
+  font-size: 35px;
+  font-weight: bold;
+  color: #000;
+}
+
+.product-content button {
+  background-color: #6f4e37;
+  color: #fff;
+  font-size: 19px;
+}
+
+.product-box:hover > .product-content {
+  opacity: 1;
 }

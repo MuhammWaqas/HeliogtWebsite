@@ -1,6 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default function ServicesFaqs() {
+
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     const [activeIndex, setActiveIndex] = useState(null);
 
     const handleAccordionToggle = (index) => {
@@ -44,13 +52,13 @@ export default function ServicesFaqs() {
     return (
         <>
 
-            <div className="container" >
-                <h3 style={{textAlign:  'center',fontWeight: '600'}}>People may ask</h3>
+            <div className="container" data-aos="fade-up">
+                <h3 style={{ textAlign: 'center', fontWeight: '600' }}>People may ask</h3>
                 <div className="row" style={{ marginTop: '3%' }}>
                     <div className="col-md-12">
                         <div className="accordion" >
                             {faqItems.map((item, index) => (
-                                <div className="accordion-item" style={{padding: '5px'}} key={item.id}>
+                                <div className="accordion-item" style={{ padding: '5px' }} key={item.id}>
                                     <button
                                         id={`accordion-button-${item.id}`}
                                         aria-expanded={activeIndex === index}

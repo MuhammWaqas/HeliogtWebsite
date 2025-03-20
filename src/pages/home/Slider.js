@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Slider() {
+
     useEffect(() => {
+
+        AOS.init({ duration: 1000 });
         // Initialize the Bootstrap carousel
         const myCarousel = document.querySelector('#recipeCarousele');
         // const carousel = new bootstrap.Carousel(myCarousel, {
@@ -34,12 +39,12 @@ export default function Slider() {
     }, []);
 
     return (
-        <div>
+        <div data-aos="fade-up">
             <div className="curve-line top-curve" style={{ marginTop: '3%' }}></div>
             <div className="container-fluid text-center my-3">
                 <div className="row mx-auto my-auto justify-content-center" style={{ gap: '10px' }}>
                     <div id="recipeCarousele" className="carousel slide" data-bs-ride="carousel">
-                        <div className="carousel-inner" role="listbox" style={{marginTop: '2%'}}>
+                        <div className="carousel-inner" role="listbox" style={{ marginTop: '2%' }}>
                             <div className="carousel-item active">
                                 <div className="col-12 col-md-3">
                                     <img
@@ -55,7 +60,7 @@ export default function Slider() {
                                         src={'assets/content/curves_img.png'}
                                         className="img-fluid" // Bootstrap class for responsive images
                                         alt="Slide 2"
-                                       
+
                                     />
                                 </div>
                             </div>
@@ -81,7 +86,7 @@ export default function Slider() {
                     </div>
                 </div>
             </div>
-            <div className="curve-line bottom-curve" style={{marginTop: '-2%'}}></div>
+            <div className="curve-line bottom-curve" style={{ marginTop: '-2%' }}></div>
 
             <style jsx>{`
                 @media (max-width: 576px) {

@@ -1,8 +1,15 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import { AppContext } from '../StateManagement/Context'; // Adjust the import path as necessary
+import { useContext, useState, useEffect } from 'react';
+import { AppContext } from '../StateManagement/Context';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default function EstimatedAppartment() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     const navigate = useNavigate();
     const { data, setData } = useContext(AppContext); // Use context to get data
     const [selectedOption, setSelectedOption] = useState(null); // State to track selected option
@@ -112,7 +119,7 @@ export default function EstimatedAppartment() {
                                         }}
                                     >
                                         {/* Subheading */}
-                                        <p
+                                        <p data-aos="fade-up"
                                             style={{
                                                 color: "#77B900",
                                                 fontWeight: "bold",
@@ -126,6 +133,7 @@ export default function EstimatedAppartment() {
 
                                         {/* Main Heading */}
                                         <h2
+                                            data-aos="fade-down"
                                             style={{
                                                 fontWeight: "bold",
                                                 fontSize: "36px",
@@ -139,6 +147,7 @@ export default function EstimatedAppartment() {
 
                                         {/* House Type Options */}
                                         <div
+                                            
                                             className="d-flex justify-content-between align-items-center"
                                             style={{
                                                 gap: "10px", // Adding gap between cards
@@ -146,6 +155,7 @@ export default function EstimatedAppartment() {
                                         >
                                             <div
                                                 className={`card d-flex flex-column align-items-center p-3 ${selectedOption === 'Apartment' ? 'selected' : ''}`}
+
                                                 style={{
                                                     border: "2px solid #77B900",
                                                     borderRadius: "12px",

@@ -2,7 +2,7 @@ import React from 'react';
 import AboutSolarInstallation from './AboutSolarInstallation';
 import AboutGoingSolar from './AboutGoingSolar';
 import AboutLocation from './AboutLocation';
-import AboutGallery from './AboutGallery';
+// import AboutGallery from './AboutGallery';
 
 export default function AboutUs() {
     return (
@@ -13,12 +13,17 @@ export default function AboutUs() {
                     style={{ zIndex: -1 }}
                 >
                     <div className="section-background position-absolute">
-                        <img
-                            alt="Background"
-                            src="assets/content/home.png"
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
                             className="w-100 object-fit-cover"
-                            style={{ display: "block", height: '80vh' }}
-                        />
+                            style={{ display: "block", height: "80vh", objectFit: "cover" }}
+                        >
+                            <source src="https://joinarc.io/wp-content/uploads/2024/06/AdobeStock_759054931.mp4" type="video/mp4" />
+                        </video>
+
                         <div
                             className="section-background-overlay position-absolute"
                             style={{ backgroundColor: "rgba(0, 0, 0, 0.3)", pointerEvents: "none" }}
@@ -59,8 +64,8 @@ export default function AboutUs() {
             <AboutSolarInstallation />
             <AboutGoingSolar />
             <AboutLocation />
-            <AboutGallery />
-            <AboutGoingSolar />
+            {/* <AboutGallery /> */}
+            {/* <AboutGoingSolar /> */}
         </>
     )
 }

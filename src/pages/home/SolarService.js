@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function SolarInstallation() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     return (
         <div>
             <section
@@ -26,7 +32,7 @@ export default function SolarInstallation() {
                                             id="block-6306ba380f394d4b88505c5c"
                                         >
                                             <div className="sqs-block-content">
-                                                <div className="sqs-html-content">
+                                                <div className="sqs-html-content" data-aos="fade-up">
                                                     <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", marginTop: "10%", fontSize: "24px" }}>
                                                         <strong>Solar Services Near Kansas<br />
                                                             City, MO</strong>
@@ -59,10 +65,11 @@ export default function SolarInstallation() {
                                 {/* Right Column */}
                                 <div
                                     className="col-md-6 d-flex flex-column justify-content-between"
+                                    data-aos="fade-down"
                                     style={{
                                         display: "flex",
                                         flexDirection: "column",
-                                     
+
                                         padding: "1rem",
                                     }}
                                 >
@@ -73,7 +80,7 @@ export default function SolarInstallation() {
                                                 width: "100%",
                                                 height: "100%",
                                                 position: "relative",
-                                               
+
                                             }}
                                         >
                                             <iframe

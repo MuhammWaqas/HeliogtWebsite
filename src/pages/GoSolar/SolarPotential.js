@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function SolarPotential() {
+     useEffect(() => {
+            AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+        }, []);
+
     return (
         <>
-            <section className="page-section">
+            <section className="page-section" data-aos="fade-up">
 
                 <div className="content-wrapper py-5" style={{ maxWidth: '100%', maxHeight: '100%' }}>
 

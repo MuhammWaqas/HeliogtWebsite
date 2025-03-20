@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function SolarInstallition() {
+    useEffect(() => {
+            AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+        }, []);
+
     return (
         <div>
             <section
@@ -15,7 +21,7 @@ export default function SolarInstallition() {
                     <div className="content">
                         <div data-fluid-engine="true">
                             <div className="row">
-                                <div className="col-md-6">
+                                <div className="col-md-6" data-aos="fade-up">
                                     <div className="fe-block fe-block-6306ba380f394d4b88505c5c">
                                         <div
                                             className="sqs-block html-block sqs-block-html"
@@ -64,7 +70,7 @@ export default function SolarInstallition() {
                                     </div>
                                 </div>
 
-                                <div className="col-md-6" style={{ marginTop: '15%' }}>
+                                <div className="col-md-6" style={{ marginTop: '15%' }} data-aos="fade-down">
                                     <div className="fe-block fe-block-yui_3_17_2_1_1661384183313_131397">
                                         <div className="video-container text-center">
                                             <div className="video-frame" style={{ width: '100%', height: '315px' }}>

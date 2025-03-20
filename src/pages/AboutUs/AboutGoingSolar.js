@@ -1,10 +1,15 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function AboutGoingSolar() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     return (
         <>
-            <section
+            <section data-aos="fade-up"
                 data-test="page-section"
                 data-section-theme=""
                 className="page-section has-section-divider"
@@ -22,7 +27,7 @@ export default function AboutGoingSolar() {
                             height: "100%",
                             marginLeft: "2%",
                             borderRadius: "12px",
-                            
+
                         }}>
                         <img
                             src="assets/content/solar_image.png"

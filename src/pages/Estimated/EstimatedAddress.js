@@ -1,15 +1,21 @@
 import { useNavigate } from 'react-router-dom';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import { useContext } from 'react';
-import { AppContext } from '../StateManagement/Context'; // Import the context
+import { useContext, useEffect } from 'react';
+import { AppContext } from '../StateManagement/Context';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function EstimatedAddress() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     const navigate = useNavigate();
     const { data } = useContext(AppContext); // Use context to get data
 
     // Extracting data from context
-    const address = data.locationInfo ? 
-        `${data.locationInfo.street} ${data.locationInfo.streetNumber}, ${data.locationInfo.city}, ${data.locationInfo.state} ${data.locationInfo.postalCode}, USA` : 
+    const address = data.locationInfo ?
+        `${data.locationInfo.street} ${data.locationInfo.streetNumber}, ${data.locationInfo.city}, ${data.locationInfo.state} ${data.locationInfo.postalCode}, USA` :
         "Address not provided"; // Default message if no address is passed
 
     const lat = data.locationInfo?.geo[0] || 37.7749; // Default latitude
@@ -38,7 +44,7 @@ export default function EstimatedAddress() {
                                 </div>
                             </div>
                             <div className="row" style={{ display: 'flex', alignItems: 'stretch' }}>
-                                <div className="col-md-6" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100vh' }}>
+                                <div className="col-md-6" data-aos="fade-down" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', height: '100vh' }}>
                                     <div className="sqs-html-content">
                                         <h3 style={{ whiteSpace: 'pre-wrap', fontSize: '36px', fontWeight: '600' }}>
                                             <strong>YOUR ADDRESS</strong>
@@ -97,7 +103,7 @@ export default function EstimatedAddress() {
                                     </div>
                                 </div>
 
-                                <div className="col-md-6 styled-box" style={{ height: '100vh' }}>
+                                <div className="col-md-6 styled-box" data-aos="fade-up" style={{ height: '100vh' }}>
                                     <GoogleMap
                                         mapContainerStyle={{ height: '100%', width: '100%' }}
                                         center={{ lat, lng }} // Center the map on the passed coordinates

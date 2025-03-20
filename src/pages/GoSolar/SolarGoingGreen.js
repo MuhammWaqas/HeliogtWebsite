@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default function SolarGoingGreen() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     return (
         <>
             <section className="page-section" style={{ marginTop: '3%' }}>
@@ -9,7 +16,7 @@ export default function SolarGoingGreen() {
 
                     <div data-fluid-engine="true">
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-md-12" data-aos="fade-up">
                                 <div className="sqs-html-content">
                                     <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px' }}>
                                         <strong>Going green, helps you save green.</strong>
@@ -65,7 +72,7 @@ export default function SolarGoingGreen() {
 
                             <div className="col-md-5">
 
-                                <div className="video-container">
+                                <div className="video-container" data-aos="fade-down">
                                     <div className="styled-box embed-responsive embed-responsive-16by9">
                                         <iframe
                                             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -106,7 +113,7 @@ export default function SolarGoingGreen() {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-7">
+                            <div className="col-md-7" data-aos="fade-up">
                                 <div className="content-container">
                                     <p style={{ whiteSpace: "pre-wrap", fontSize: '16px', height: '100%' }}>
                                         <strong>POSSIBLE INCREASED HOME VALUE: </strong> Solar (PV) Systems are viewed as upgrades, like a ren-

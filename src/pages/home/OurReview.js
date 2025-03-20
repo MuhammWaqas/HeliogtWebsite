@@ -35,7 +35,7 @@ export default function OurReview() {
 
     return (
         <div>
-            <h2 style={{ textAlign: 'center' }}> <strong>Our REVIEW</strong></h2>
+            <h2 style={{ textAlign: 'center',marginTop: '8%' }}> <strong>Our REVIEW</strong></h2>
             <div className="container text-center my-3">
                 <div
                     className="row mx-auto my-auto justify-content-center"
@@ -46,153 +46,136 @@ export default function OurReview() {
                     <div id="recipeCarousel" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-inner" role="listbox">
                             <div className="carousel-item active">
-                                <div className="col-md-3">
-                                    <div className="card" style={{ background: ' #D9D9D9' }}>
-                                        <div class="card-body">
-                                            <h5 class="card-title" style={{ textAlign: 'left', marginTop: '8%' }}>Top Notch Service </h5>
-                                            <p class="card-text" style={{ textAlign: 'left', marginTop: '3%' }}>
-                                                Lorem Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book. Lorem
-                                                Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book.
-                                            </p>
-                                            <a href="#" class="card-link">Lweigler on jun 21, 2023</a>
-                                            <a href="#" class="card-link">*****</a>
+                                <div className="col-md-4">
+                                    <div className="testimonial">
+                                        <div className="testimonial-img">
+                                            <img src="https://source.unsplash.com/random/600x600" alt="" />
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="col-md-3">
-                                    <div className="card" style={{ background: ' #D9D9D9' }}>
-                                        <div class="card-body">
-                                            <h5 class="card-title" style={{ textAlign: 'left', marginTop: '8%' }}>Top Notch Service </h5>
-                                            <p class="card-text" style={{ textAlign: 'left', marginTop: '3%' }}>
-                                                Lorem Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book. Lorem
-                                                Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book.
-                                            </p>
-                                            <a href="#" class="card-link">Lweigler on jun 21, 2023</a>
-                                            <a href="#" class="card-link">*****</a>
+                                        <div className="testimonial-name">Full name</div>
+                                        <div className="testimonial-rating">
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
                                         </div>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s,
+                                        </p>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="col-md-3">
-                                    <div className="card" style={{ background: ' #D9D9D9' }}>
-                                        <div class="card-body">
-                                            <h5 class="card-title" style={{ textAlign: 'left', marginTop: '8%' }}>Top Notch Service </h5>
-                                            <p class="card-text" style={{ textAlign: 'left', marginTop: '3%' }}>
-                                                Lorem Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book. Lorem
-                                                Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book.
-                                            </p>
-                                            <a href="#" class="card-link">Lweigler on jun 21, 2023</a>
-                                            <a href="#" class="card-link">*****</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="col-md-3">
-                                    <div className="card" style={{ background: ' #D9D9D9' }}>
-                                        <div class="card-body">
-                                            <h5 class="card-title" style={{ textAlign: 'left', marginTop: '8%' }}>Top Notch Service </h5>
-                                            <p class="card-text" style={{ textAlign: 'left', marginTop: '3%' }}>
-                                                Lorem Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book. Lorem
-                                                Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book.
-                                            </p>
-                                            <a href="#" class="card-link">Lweigler on jun 21, 2023</a>
-                                            <a href="#" class="card-link">*****</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="col-md-3">
-                                    <div className="card" style={{ background: ' #D9D9D9' }}>
-                                        <div class="card-body">
-                                            <h5 class="card-title" style={{ textAlign: 'left', marginTop: '8%' }}>Top Notch Service </h5>
-                                            <p class="card-text" style={{ textAlign: 'left', marginTop: '3%' }}>
-                                                Lorem Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book. Lorem
-                                                Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book.
-                                            </p>
-                                            <a href="#" class="card-link">Lweigler on jun 21, 2023</a>
-                                            <a href="#" class="card-link">*****</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="col-md-3">
-                                    <div className="card" style={{ background: ' #D9D9D9' }}>
-                                        <div class="card-body">
-                                            <h5 class="card-title" style={{ textAlign: 'left', marginTop: '8%' }}>Top Notch Service </h5>
-                                            <p class="card-text" style={{ textAlign: 'left', marginTop: '3%' }}>
-                                                Lorem Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book. Lorem
-                                                Ipsum has been the industry's
-                                                standard dummy text ever since the
-                                                1500s, when an unknown printer took
-                                                a galley of type and scrambled it to
-                                                make a type specimen book.
-                                            </p>
-                                            <div
-                                                style={{
-                                                    display: "flex",
-                                                    justifyContent: "space-between",
-                                                    alignItems: "center"
-                                                }}
-                                            >
-                                                <a href="#" className="card-link">
-                                                    Lweigler on jun 21, 2023
-                                                </a>
-                                                <a href="#" className="card-link">
-                                                    *****
-                                                </a>
-                                            </div>
 
+
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="col-md-4">
+                                    <div className="testimonial">
+                                        <div className="testimonial-img">
+                                            <img src="https://source.unsplash.com/random/600x600" alt="" />
                                         </div>
+                                        <div className="testimonial-name">Full name</div>
+                                        <div className="testimonial-rating">
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                        </div>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="col-md-4">
+                                    <div className="testimonial">
+                                        <div className="testimonial-img">
+                                            <img src="https://source.unsplash.com/random/600x600" alt="" />
+                                        </div>
+                                        <div className="testimonial-name">Full name</div>
+                                        <div className="testimonial-rating">
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                        </div>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="col-md-4">
+                                    <div className="testimonial">
+                                        <div className="testimonial-img">
+                                            <img src="https://source.unsplash.com/random/600x600" alt="" />
+                                        </div>
+                                        <div className="testimonial-name">Full name</div>
+                                        <div className="testimonial-rating">
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                        </div>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="col-md-4">
+                                    <div className="testimonial">
+                                        <div className="testimonial-img">
+                                            <img src="https://source.unsplash.com/random/600x600" alt="" />
+                                        </div>
+                                        <div className="testimonial-name">Full name</div>
+                                        <div className="testimonial-rating">
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                        </div>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="col-md-4">
+                                    <div className="testimonial">
+                                        <div className="testimonial-img">
+                                            <img src="https://source.unsplash.com/random/600x600" alt="" />
+                                        </div>
+                                        <div className="testimonial-name">Full name</div>
+                                        <div className="testimonial-rating">
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                            <i className="fas fa-star" />
+                                        </div>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s,
+                                        </p>
                                     </div>
                                 </div>
                             </div>

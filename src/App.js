@@ -17,7 +17,12 @@ import EstimatedAverage from "./pages/Estimated/EstimatedAverage";
 import EstimatedORent from "./pages/Estimated/EstimatedORent";
 import EstimatedAppartment from "./pages/Estimated/EstimatedAppartment";
 import EstimatedRevolutation from "./pages/Estimated/EstimatedRevolutation";
-import FinalResult from "./pages/FinalResult/FinalResult"
+import FinalResult from "./pages/FinalResult/FinalResult";
+import EnvironmentalConcerns from "./pages/SolarNews/EnvironmentalConcerns";
+import HowGreenBlog from "./pages/SolarNews/HowGreenBlog";
+import GoingSolarCase from "./pages/SolarNews/GoingSolarCase";
+import NavigatingHOA from "./pages/SolarNews/NavigatingHOA";
+import AboutGallery from "./pages/AboutUs/AboutGallery";
 
 
 function App() {
@@ -47,6 +52,20 @@ function App() {
                 <main id="page" role="main">
                   <article className="sections" id="sections">
                     <AboutUs />
+                  </article>
+                </main>
+                <Footer />
+              </>
+            } 
+          />
+          <Route 
+            path="/our-gallery" 
+            element={
+              <>
+                <Header />
+                <main id="page" role="main">
+                  <article className="sections" id="sections">
+                    <AboutGallery />
                   </article>
                 </main>
                 <Footer />
@@ -131,6 +150,62 @@ function App() {
                 <main id="page" role="main">
                   <article className="sections" id="sections">
                     <SolarNews />
+                  </article>
+                </main>
+                <Footer />
+              </>
+            } 
+          />
+          <Route 
+            path="/environmental-concerns" 
+            element={
+              <>
+                <Header />
+                <main id="page" role="main">
+                  <article className="sections" id="sections">
+                    <EnvironmentalConcerns />
+                  </article>
+                </main>
+                <Footer />
+              </>
+            } 
+          />
+          <Route 
+            path="/how-green" 
+            element={
+              <>
+                <Header />
+                <main id="page" role="main">
+                  <article className="sections" id="sections">
+                    <HowGreenBlog />
+                  </article>
+                </main>
+                <Footer />
+              </>
+            } 
+          />
+          <Route 
+            path="/goingsolar-case" 
+            element={
+              <>
+                <Header />
+                <main id="page" role="main">
+                  <article className="sections" id="sections">
+                    <GoingSolarCase />
+                  </article>
+                </main>
+                <Footer />
+              </>
+            } 
+          />
+          <Route 
+            path="/navigating-hoa" 
+            element={
+              <>
+                <Header />
+                <main id="page" role="main">
+                  <article className="sections" id="sections">
+                    <NavigatingHOA />
                   </article>
                 </main>
                 <Footer />

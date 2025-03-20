@@ -1,4 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Slider from "./Slider";
 import Boxs from "./Boxs";
 import Button from "./Button";
@@ -19,6 +22,9 @@ import BrandImg from "./BrandImg";
 const Home = () => {
 
     const navigate = useNavigate();
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
 
     return (
         <>
@@ -28,12 +34,18 @@ const Home = () => {
                     style={{ zIndex: -1 }}
                 >
                     <div className="section-background position-absolute">
-                        <img
-                            alt="Background"
-                            src="assets/content/home.png"
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
                             className="w-100 object-fit-cover"
-                            style={{ display: "block", height: '100vh' }}
-                        />
+                            style={{ display: "block", height: "100vh", objectFit: "cover" }}
+                        >
+                            <source src="https://joinarc.io/wp-content/uploads/2024/06/AdobeStock_759054931.mp4" type="video/mp4" />
+
+                        </video>
+
                         <div
                             className="section-background-overlay position-absolute"
                             style={{ backgroundColor: "rgba(0, 0, 0, 0.3)", pointerEvents: "none" }}
@@ -87,11 +99,11 @@ const Home = () => {
             </section>
 
 
-            <section className="page-section" style={{ marginTop: '-11%' }}>
+            <section className="page-section" style={{ marginTop: '-11%' }} data-aos="fade-up">
                 <div className="content-wrapper py-5" style={{ backgroundColor: '#D9D9D9', maxWidth: '100%', maxHeight: '100%' }}>
                     <div data-fluid-engine="true">
                         <div className="row" style={{ marginTop: '3%' }}>
-                            <div className="col-md-6">
+                            <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
                                 <div className="sqs-html-content" style={{ marginTop: '5%' }}>
                                     <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px', fontWeight: '600' }}>
                                         Go <span style={{ color: 'rgba(147, 204, 15, 1)' }}>solar</span> with Helio GreenTech
@@ -108,13 +120,9 @@ const Home = () => {
                                         how much you can save by installing solar today.
                                     </p>
                                 </div>
-
-
-
                             </div>
 
-                            <div className="col-md-6">
-
+                            <div className="col-md-6" data-aos="fade-up" data-aos-delay="400">
                                 <div className="video-container">
                                     <div className="styled-box" style={{ height: '50vh', width: '90%' }}>
                                         <iframe
@@ -126,20 +134,18 @@ const Home = () => {
                                         ></iframe>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
+
 
             <Slider />
             <Boxs />
             <Button />
             <CurvedSection />
             <SaveSolar />
-
             <SolarConsultation />
             <GoingSolar />
             <SolarService />
@@ -147,35 +153,6 @@ const Home = () => {
             <SolarInstallition />
             <OutstandingSection />
             <OurReview />
-
-
-            <section>
-                <div className="container calendar-container">
-                    <div className="row justify-content-center">
-                        <div className="col-12">
-                            <div className="calendly-wrapper">
-
-
-                                <div className="calendly-spinner">
-                                    <div className="calendly-bounce1" />
-                                    <div className="calendly-bounce2" />
-                                    <div className="calendly-bounce3" />
-                                </div>
-                                <div className="top-arrow" />
-                                <iframe
-                                    src="https://calendly.com/d/cpfm-7xj-8w6/solar-consultation-residential-home-visit?embed_domain=www.heliogt.com&embed_type=Inline&hide_gdpr_banner=1&text_color=34337d&primary_color=6ba80a"
-                                    style={{ position: "relative", minWidth: 320, height: 700 }}
-                                    title="Select a Date & Time - Calendly"
-                                ></iframe>
-                                <div className="left-shadow" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
             <OurLocation />
             <WhatMore />
             <BrandImg />

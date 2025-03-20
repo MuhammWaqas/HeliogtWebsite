@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default function AboutSolarInstallation() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     return (
         <>
             <section className="page-section" style={{ marginTop: '3%' }}>
@@ -11,10 +18,10 @@ export default function AboutSolarInstallation() {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="sqs-html-content">
-                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px',fontWeight: '600' }}>
+                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px', fontWeight: '600' }}>
                                         Solar installation in Missouri and Kansas
                                     </h3>
-                                    <p style={{ whiteSpace: "pre-wrap", fontSize: '16px' }}>
+                                    <p style={{ whiteSpace: "pre-wrap", fontSize: '16px' }} data-aos="fade-up">
                                         We offer cutting-edge solar solutions that will help you save money and reduce your impact on the environment. Helio GreenTech is a
                                         family-owned and operated solar company that’s committed to excellence. Founded in 2019 by an experience team that has over 15
                                         years of experience in the industry. Our team is focused on bringing clean, affordable solar power to homes and businesses in Missouri
@@ -25,10 +32,10 @@ export default function AboutSolarInstallation() {
                                         can be confident that you’ll get the best workmanship, best solar equipment, and best warranties in town. Thanks to our amazing team and
                                         to all our customers that have placed their trust in Helio GreenTech to make us The Best Solar Company two years in a row.
                                     </p>
-                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px',fontWeight: '600' }}>
+                                    <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px', fontWeight: '600' }}>
                                         What Makes Helio GreenTech the Best Solar company in Kansas City?
                                     </h3>
-                                    <p style={{ whiteSpace: "pre-wrap", fontSize: '16px' }}>
+                                    <p style={{ whiteSpace: "pre-wrap", fontSize: '16px' }} data-aos="fade-up">
                                         According the the Pitch Magazine, KC’s Best and our partnership with EnergySage. Helio GreenTech has been recognized as one of the
                                         best solar installers in Kansas City in a large part through our reviews and customer satisfaction surveys through third parties. We are
                                         grateful to our customers for their feedback and we look forward to providing a great experience and 5-Star customer service to our
@@ -51,8 +58,6 @@ export default function AboutSolarInstallation() {
                                         solar systems are operating efficiently and effectively.” - Customer Satisfaction Survey from KC’s Best 2022.
                                     </p>
                                     <p style={{ whiteSpace: "pre-wrap", fontSize: '16px' }}>
-
-
                                     </p>
                                 </div>
                             </div>

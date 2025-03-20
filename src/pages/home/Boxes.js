@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default function Boxes() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+    
     return (
         <>
-            <section className="page-section" style={{marginTop: '8%'}}>
+            <section className="page-section" style={{ marginTop: '8%' }}>
                 <div className="section-border" data-controller="SectionDivider" style={{ clipPath: "url(#section-divider-65a6b757d33ea3703d6aa7aa)" }}>
                     <div className="section-background"></div>
                 </div>
@@ -24,8 +31,8 @@ export default function Boxes() {
                                                                 LIFETIME
                                                             </strong>
                                                         </p>
-                                                        <p style={{ whiteSpace: "pre-wrap", textAlign: 'center' }}>
-                                                            <span className="sqsrte-text-color--accent">
+                                                        <p style={{ whiteSpace: "pre-wrap", textAlign: 'center' }} data-aos="fade-down">
+                                                            <span className="sqsrte-text-color--accent" >
                                                                 <strong style={{ fontSize: '36px' }}>MONITORING</strong>
                                                             </span>
                                                             <br />
@@ -68,7 +75,7 @@ export default function Boxes() {
                                                                 LINEAR SOLAR
                                                             </strong>
                                                         </p>
-                                                        <p style={{ whiteSpace: "pre-wrap", textAlign: 'center' }}>
+                                                        <p style={{ whiteSpace: "pre-wrap", textAlign: 'center' }} data-aos="fade-up">
                                                             <span className="sqsrte-text-color--accent">
                                                                 <strong style={{ fontSize: '36px' }}>PRODUCTION</strong>
                                                             </span>
@@ -78,7 +85,7 @@ export default function Boxes() {
 
                                                     </div>
 
-                                                    <hr style={{ width: '50%',border: '1px solid', marginLeft: '25%', marginTop: '12%', color: 'rgba(255, 255, 255, 0.2)' }} />
+                                                    <hr style={{ width: '50%', border: '1px solid', marginLeft: '25%', marginTop: '12%', color: 'rgba(255, 255, 255, 0.2)' }} />
                                                     <p style={{ whiteSpace: "pre-wrap" }}>&nbsp;</p>
                                                     <p style={{ padding: '15px', textAlign: 'center' }}>
                                                         <span style={{ color: '#EEEEEE' }} >
@@ -94,7 +101,7 @@ export default function Boxes() {
                                                         </span>
                                                     </p>
 
-                                                   
+
                                                     <p style={{ padding: '17px', textAlign: 'center' }}>
                                                         <span style={{ color: '#EEEEEE' }} >
                                                             *(Manufacturer annual
@@ -119,10 +126,10 @@ export default function Boxes() {
                                                     <div className="sqsrte-scaled" style={{ marginTop: '18%' }}>
                                                         <p style={{ whiteSpace: "pre-wrap", textAlign: 'center', fontSize: '26px' }}>
                                                             <strong className="sqsrte-text-color--white">
-                                                            GO SOLAR WITH
+                                                                GO SOLAR WITH
                                                             </strong>
                                                         </p>
-                                                        <p style={{ whiteSpace: "pre-wrap", textAlign: 'center' }}>
+                                                        <p style={{ whiteSpace: "pre-wrap", textAlign: 'center' }} data-aos="fade-up">
                                                             <span className="sqsrte-text-color--accent">
                                                                 <strong style={{ fontSize: '36px' }}>$0 DOWN</strong>
                                                             </span>

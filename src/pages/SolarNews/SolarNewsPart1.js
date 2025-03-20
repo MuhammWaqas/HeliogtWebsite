@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SolarNewsPart1() {
     return (
@@ -49,8 +50,7 @@ export default function SolarNewsPart1() {
                                         panels themselves may want to consider other options that offer bet-
                                         ter returns on investment.
                                     </p>
-                                    <a class="blog-more-link" href="/"
-                                        style={{ marginTop: '3%' }}>Read More</a>
+                                    <Link to="/navigating-hoa" className="blog-more-link" style={{ marginTop: '3%' }}>Read More</Link>
                                 </div>
                             </div>
                             <div

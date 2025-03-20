@@ -12,12 +12,16 @@ export default function GoSolar() {
                     style={{ zIndex: -1 }}
                 >
                     <div className="section-background position-absolute">
-                        <img
-                            alt="Background"
-                            src="assets/content/home.png"
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
                             className="w-100 object-fit-cover"
-                            style={{ display: "block", height: '80vh' }}
-                        />
+                            style={{ display: "block", height: "80vh", objectFit: "cover" }}
+                        >
+                            <source src="https://joinarc.io/wp-content/uploads/2024/06/AdobeStock_759054931.mp4" type="video/mp4" />
+                        </video>
                         <div
                             className="section-background-overlay position-absolute"
                             style={{ backgroundColor: "rgba(0, 0, 0, 0.3)", pointerEvents: "none" }}
@@ -41,7 +45,7 @@ export default function GoSolar() {
                                             <div className="sqs-html-content">
                                                 <div className="parent-container" style={{ position: 'relative', height: '300px' }}>
                                                     <h2 className="text-bottom-left">
-                                                       
+
                                                         <strong className="text-accentes">WHY GO </strong>
                                                         <strong className="text-accented"> SOLAR </strong>
                                                     </h2>

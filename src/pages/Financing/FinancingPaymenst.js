@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function FinancingPaymenst() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true }); // Animation duration: 1000ms, runs once
+    }, []);
+
     return (
         <>
             <section className="page-section" style={{ marginTop: '3%' }}>
@@ -9,7 +15,7 @@ export default function FinancingPaymenst() {
 
                     <div data-fluid-engine="true">
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-md-12" data-aos="fade-up">
                                 <div className="sqs-html-content">
                                     <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px' }}>
                                         <strong>Payments Less Than Your Electric Bill</strong>
@@ -35,7 +41,7 @@ export default function FinancingPaymenst() {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-md-12" data-aos="fade-down">
                                 <div className="sqs-html-content">
                                     <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px' }}>
                                         <strong>Solar Lease</strong>
@@ -74,7 +80,7 @@ export default function FinancingPaymenst() {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-md-12" data-aos="fade-up">
                                 <div className="sqs-html-content">
                                     <h3 style={{ textAlign: "left", whiteSpace: "pre-wrap", fontSize: '30px' }}>
                                         <strong>The IRA Inflation Reduction Act of 2022:</strong>
