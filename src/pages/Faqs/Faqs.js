@@ -1,11 +1,15 @@
 import React from 'react';
-import FaqSolarCost from './FaqSolarCost';
-import FaqSolarCostPart1 from './FaqSolarCostPart1';
 import FaqQuestion from './FaqQuestion';
+import { Helmet } from 'react-helmet';
 
 export default function Faqs() {
     return (
         <>
+            <Helmet>
+                <title>Frequently Asked Questions | Helio Green Tech</title>
+                <meta name="description" content="Explore the Frequently Asked Questions (FAQs) about Helio Green Tech. Get answers to common inquiries about our innovative green technology solutions, sustainability practices, and how we can help you transition to a greener future." />
+                <meta name="keywords" content="Helio Green Tech, FAQs, green technology, sustainable solutions, renewable energy, eco-friendly practices, environmental technology, Helio Green Tech questions" />
+            </Helmet>
             <section >
                 <div
                     className="section-border position-absolute"
@@ -60,8 +64,7 @@ export default function Faqs() {
                 </div>
             </section>
 
-            <FaqSolarCost />
-            <FaqSolarCostPart1 />
+
             <FaqQuestion />
         </>
     )

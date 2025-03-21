@@ -2,10 +2,17 @@ import React from 'react';
 import SolarGoingGreen from './SolarGoingGreen';
 import SolarSameEnerg from './SolarSameEnerge';
 import SolarPotential from './SolarPotential';
+import { Helmet } from 'react-helmet';
 
 export default function GoSolar() {
     return (
         <>
+            <Helmet>
+                <title>Go Solar | Helio Green Tech - Innovating Sustainable Solutions</title>
+                <meta name="description" content="Discover the benefits of going solar with Helio Green Tech. Learn how solar energy can save you money and help the environment." />
+                <meta name="keywords" content="Go Solar, Helio Green Tech, solar energy, renewable energy, eco-friendly solutions, solar installation" />
+            </Helmet>
+            
             <section >
                 <div
                     className="section-border position-absolute"

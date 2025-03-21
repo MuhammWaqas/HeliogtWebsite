@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import ContactUsSection from './ContactUsSection';
 import ContactUsLocation from './ContactUsLocation';
+import { Helmet } from 'react-helmet';
 
 export default class ContactUs extends Component {
     render() {
         return (
             <>
+                <Helmet>
+                    <title>Contact Us | Helio Green Tech - Innovating Sustainable Solutions</title>
+                    <meta name="description" content="Get in touch with Helio Green Tech for inquiries about solar energy solutions, financing options, and career opportunities." />
+                    <meta name="keywords" content="Contact, Helio Green Tech, solar energy, renewable energy, inquiries, customer support" />
+                </Helmet>
+
                 <section >
                     <div
                         className="section-border position-absolute"

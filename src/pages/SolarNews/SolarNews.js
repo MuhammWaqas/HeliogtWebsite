@@ -6,10 +6,18 @@ import SolarNewsPart1 from './SolarNewsPart1';
 import SolarNewsPart2 from './SolarNewsPart2';
 import SolarNewsPart3 from './SolarNewsPart3';
 import SolarNewsPart4 from './SolarNewsPart4';
+import { Helmet } from 'react-helmet';
 
 export default function SolarNews() {
     return (
         <>
+
+            <Helmet>
+                <title>Solar News | Helio Green Tech - Innovating Sustainable Solutions</title>
+                <meta name="description" content="Stay updated with the latest news and trends in solar energy. Explore articles, insights, and updates from Helio Green Tech." />
+                <meta name="keywords" content="Solar News, Helio Green Tech, renewable energy, solar energy trends, solar technology updates" />
+            </Helmet>
+            
             <section>
                 <div className="section-border position-absolute" style={{ zIndex: -1 }}>
                     <div className="section-background position-absolute">

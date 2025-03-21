@@ -1,10 +1,17 @@
 import React from 'react';
 import FinancingPaymenst from './FinancingPaymenst';
 import FinanceEstimate from './FinanceEstimate';
+import { Helmet } from 'react-helmet';
 
 export default function FinancingSection() {
     return (
         <>
+            <Helmet>
+                <title>Financing | Helio Green Tech - Innovating Sustainable Solutions</title>
+                <meta name="description" content="Explore flexible financing options for solar energy solutions with Helio Green Tech. Make the switch to renewable energy today!" />
+                <meta name="keywords" content="Financing, Helio Green Tech, solar energy financing, renewable energy solutions, solar panel financing" />
+            </Helmet>
+
             <section >
                 <div
                     className="section-border position-absolute"

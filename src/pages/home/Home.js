@@ -17,6 +17,7 @@ import OurReview from "./OurReview";
 import OurLocation from "./OurLocation";
 import WhatMore from "./WhatMore";
 import BrandImg from "./BrandImg";
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
@@ -28,6 +29,12 @@ const Home = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Home | Helio Green Tech - Innovating Sustainable Solutions</title>
+                <meta name="description" content="Welcome to Helio Green Tech, your premier source for innovative green technology solutions. Discover our commitment to sustainability, renewable energy, and eco-friendly practices designed to help you transition to a greener future. Join us in making a positive impact on the environment!" />
+                <meta name="keywords" content="Helio Green Tech, home, green technology, sustainable solutions, renewable energy, eco-friendly products, environmental innovation, clean technology" />
+            </Helmet>
+            
             <section >
                 <div
                     className="section-border position-absolute"

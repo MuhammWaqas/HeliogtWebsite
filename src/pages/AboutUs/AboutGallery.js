@@ -4,6 +4,7 @@ import AboutGalleryPart5 from './AboutGalleryPart5';
 import AboutGalleryPart6 from './AboutGalleryPart6';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from 'react-helmet';
 
 export default function AboutGallery() {
     useEffect(() => {
@@ -73,6 +74,11 @@ export default function AboutGallery() {
 
     return (
         <>
+            <Helmet>
+                <title>Our Gallery | Helio Green Tech - Innovating Sustainable Solutions</title>
+                <meta name="description" content="Explore our gallery showcasing innovative solar energy solutions and projects by Helio Green Tech. See how we are making a difference in sustainable energy." />
+                <meta name="keywords" content="Helio Green Tech, gallery, solar energy, renewable energy, eco-friendly projects, sustainable solutions" />
+            </Helmet>
             <section>
                 <div className="section-border position-absolute" style={{ zIndex: -1 }}>
                     <div className="section-background position-absolute">

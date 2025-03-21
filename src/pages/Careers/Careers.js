@@ -1,9 +1,17 @@
 import React from 'react';
 import CareerConsultant from './CareerConsultant';
+import { Helmet } from 'react-helmet';
+
 
 export default function Careers() {
     return (
         <>
+            <Helmet>
+                <title>Careers | Helio Green Tech - Innovating Sustainable Solutions</title>
+                <meta name="description" content="Join the Helio Green Tech team! Explore exciting career opportunities in renewable energy and be part of a sustainable future." />
+                <meta name="keywords" content="Careers, Helio Green Tech, job opportunities, renewable energy jobs, join our team" />
+            </Helmet>
+
             <section >
                 <div
                     className="section-border position-absolute"

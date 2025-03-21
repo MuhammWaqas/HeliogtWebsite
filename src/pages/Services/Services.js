@@ -1,15 +1,21 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import ServicesResidental from './ServicesResidental';
 import OurServices from './OurServices';
 import ServicesFaqs from './ServicesFaqs';
 import WhatMore from '../home/WhatMore';
 import BrandImg from '../home/BrandImg';
 import ServicesLocation from './ServicesLocation';
+import { Helmet } from 'react-helmet';
 
 
 export default function Services() {
     return (
         <>
+            <Helmet>
+                <title>Our Services | Helio Green Tech - Innovating Sustainable Solutions</title>
+                <meta name="description" content="Discover the range of services offered by Helio Green Tech, including solar panel installation, maintenance, and consultation for sustainable energy solutions." />
+                <meta name="keywords" content="Helio Green Tech, services, solar panel installation, solar maintenance, renewable energy solutions, eco-friendly services" />
+            </Helmet>
 
             <section >
                 <div
@@ -51,13 +57,13 @@ export default function Services() {
                                                     <strong className="text-accented"> Services </strong>
                                                 </h2>
                                             </div>
-                                            
+
                                         </div>
-                                       
+
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

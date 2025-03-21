@@ -2,11 +2,18 @@ import React from 'react';
 import AboutSolarInstallation from './AboutSolarInstallation';
 import AboutGoingSolar from './AboutGoingSolar';
 import AboutLocation from './AboutLocation';
+import { Helmet } from 'react-helmet';
 // import AboutGallery from './AboutGallery';
 
 export default function AboutUs() {
     return (
         <>
+            <Helmet>
+                <title>About Us | Helio Green Tech - Innovating Sustainable Solutions</title>
+                <meta name="description" content="Learn more about Helio Green Tech, our mission, values, and commitment to providing innovative green technology solutions for a sustainable future." />
+                <meta name="keywords" content="Helio Green Tech, About Us, green technology, sustainable solutions, renewable energy, eco-friendly practices" />
+            </Helmet>
+            
             <section >
                 <div
                     className="section-border position-absolute"

@@ -1,9 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+import { Helmet } from 'react-helmet';
 
 export default function EnvironmentalConcerns() {
     return (
         <div>
+            <Helmet>
+                <title>The Environmental Concerns of Using AI like ChatGPT</title>
+                <meta name="description" content="Explore the environmental impact of AI technologies like ChatGPT, including energy consumption, resource usage, and potential solutions." />
+                <meta name="keywords" content="AI, ChatGPT, environmental concerns, energy consumption, sustainability, technology impact" />
+            </Helmet>
+
             <section>
                 <div className="section-border position-absolute" style={{ zIndex: -1 }}>
                     <div className="section-background position-absolute">
@@ -57,7 +66,6 @@ export default function EnvironmentalConcerns() {
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     padding: '20px',
-
                                 }}
                             >
                                 <img
@@ -84,7 +92,6 @@ export default function EnvironmentalConcerns() {
                                     justifyContent: 'center',
                                     alignItems: 'flex-start',
                                     padding: '20px',
-
                                 }}
                             >
                                 <div className="sqs-html-content">
@@ -96,25 +103,13 @@ export default function EnvironmentalConcerns() {
                                             fontSize: '30px',
                                         }}
                                     >
-                                        <strong>The Environmental Concerns of
-                                            Using AI like Chat GPT </strong>
+                                        <strong>The Environmental Concerns of Using AI like Chat GPT </strong>
                                     </h3>
 
                                     <p style={{ whiteSpace: 'pre-wrap', fontSize: '16px', marginTop: '5%' }}>
-                                        AI Taking Over the World, But Not How You Thought: Unveiling the
-                                        Environmental Concerns <br />
-                                        Helio GreenTech asks Chat GPT a question to provide insights into the
-                                        concept of water scarcity, its causes, and the impact of excessive
-                                        water consumption on local water resources and the environment.
-                                        They explore the global water crisis, the connection between water
-                                        scarcity and various sectors like agriculture, and the need for sustain-
-                                        able water management.<br />
-                                        How does a Chatbot use water and energy? we cover the concerns of
-                                        water scarcity, and while they may not specifically address the enviro-
-                                        nmental implications of AI's water consumption, they provide a broader
-                                        context for understanding the issue and its relevance to sustainable
-                                        water usage.
-
+                                        AI Taking Over the World, But Not How You Thought: Unveiling the Environmental Concerns <br />
+                                        Helio GreenTech asks Chat GPT a question to provide insights into the concept of water scarcity, its causes, and the impact of excessive water consumption on local water resources and the environment. They explore the global water crisis, the connection between water scarcity and various sectors like agriculture, and the need for sustainable water management.<br />
+                                        How does a Chatbot use water and energy? we cover the concerns of water scarcity, and while they may not specifically address the environmental implications of AI's water consumption, they provide a broader context for understanding the issue and its relevance to sustainable water usage.
                                     </p>
                                     <h3
                                         style={{
@@ -150,102 +145,204 @@ export default function EnvironmentalConcerns() {
                 </div>
             </section>
 
-            {/* Page content*/}
+            {/* Page content with carousel */}
             <div className="container pt-5">
-                <div className="row">
-                    <div className="row">
-                        <div className="col-md-4">
-                            {/* Blog post*/}
-                            <div className="card mb-4">
-                                <a href="#!">
-                                    <img
-                                        className="card-img-top"
-                                        src="assets/content/solar_img1.png"
-                                        alt="How “Green”"
-                                        style={{
-                                            display: 'block',
-                                            objectFit: 'cover',
-                                            width: '100%',
-                                            maxWidth: '632px', // Limit the image width
-                                            height: '100%',
-                                            maxHeight: '213px', // Limit the image height
-                                            borderRadius: '8px', // Optional rounding for style
-                                        }}
-                                    />
-                                </a>
-                                <div className="card-body">
-                                    <div className="small text-muted">10/16/23</div>
-                                    <h2 className="card-title h4">How “Green” are Solar Panels?...</h2>
-                                    <p className="card-text">
-                                        The solar industry has an important role to play in the fight against climate change.
-                                        While solar panels offer significant benefits...
-                                    </p>
-                                    <Link to="/how-green" className="btn btn-primary">Read More →</Link>
+                <div id="blogCarousel" className="carousel slide" data-bs-ride="carousel">
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img1.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/16/23</div>
+                                            <h2 className="card-title h4">How “Green” are Solar Panels?...</h2>
+                                            <p className="card-text">
+                                                The solar industry has an important role to play in the fight against climate change.
+                                                While solar panels offer significant benefits...
+                                            </p>
+                                            <Link to="/how-green" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img2.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/9/23</div>
+                                            <h2 className="card-title h4">Making The Case For Going Solar?...</h2>
+                                            <p className="card-text">
+                                                Helio GreenTech is a trusted solar energy company with many satisfied customers.
+                                                The company has received great reviews on multiple...
+                                            </p>
+                                            <Link to="/goingsolar-case" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img3.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/9/23</div>
+                                            <h2 className="card-title h4">Navigating HOA Restrictions on Solar?...</h2>
+                                            <p className="card-text">
+                                                It is important to note that Evergy's Solar Subscription Program may not be the
+                                                most cost-effective solution for everyone. The program...
+                                            </p>
+                                            <Link to="/navigating-hoa" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        {/* Blog post*/}
-                        <div className="col-md-4">
-                            <div className="card mb-4">
-                                <a href="#!">
-                                    <img
-                                        className="card-img-top"
-                                        src="assets/content/solar_img2.png"
-                                        alt="How “Green”"
-                                        style={{
-                                            display: 'block',
-                                            objectFit: 'cover',
-                                            width: '100%',
-                                            maxWidth: '632px', // Limit the image width
-                                            height: '100%',
-                                            maxHeight: '213px', // Limit the image height
-                                            borderRadius: '8px', // Optional rounding for style
-                                        }}
-                                    />
-                                </a>
-                                <div className="card-body">
-                                    <div className="small text-muted">Solar10/9/23</div>
-                                    <h2 className="card-title h4">Making The Case For Going Solar?...</h2>
-                                    <p className="card-text">
-                                        Helio GreenTech is a trusted solar energy company with many satisf- ied customers.
-                                        The company has received great reviews on multiple...
-                                    </p>
-                                    <Link to="/goingsolar-case" className="btn btn-primary">Read More →</Link>
+                        {/* Add another carousel item for the next set of cards */}
+                        <div className="carousel-item">
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img1.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/16/23</div>
+                                            <h2 className="card-title h4">How “Green” are Solar Panels?...</h2>
+                                            <p className="card-text">
+                                                The solar industry has an important role to play in the fight against climate change.
+                                                While solar panels offer significant benefits...
+                                            </p>
+                                            <Link to="/how-green" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="card mb-4">
-                                <a href="#!">
-                                    <img
-                                        className="card-img-top"
-                                        src="assets/content/solar_img3.png"
-                                        alt="How “Green”"
-                                        style={{
-                                            display: 'block',
-                                            objectFit: 'cover',
-                                            width: '100%',
-                                            maxWidth: '632px', // Limit the image width
-                                            height: '100%',
-                                            maxHeight: '213px', // Limit the image height
-                                            borderRadius: '8px', // Optional rounding for style
-                                        }}
-                                    />
-                                </a>
-                                <div className="card-body">
-                                    <div className="small text-muted">10/9/23</div>
-                                    <h2 className="card-title h4">Navigating HOA Restrictions on Solar?...</h2>
-                                    <p className="card-text">
-                                        It is important to note that Evergy's Solar Subscription Program may not be the
-                                         most cost-effective solution for everyone. The program...
-                                    </p>
-                                    <Link to="/navigating-hoa" className="btn btn-primary">Read More →</Link>
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img2.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/9/23</div>
+                                            <h2 className="card-title h4">Making The Case For Going Solar?...</h2>
+                                            <p className="card-text">
+                                                Helio GreenTech is a trusted solar energy company with many satisfied customers.
+                                                The company has received great reviews on multiple...
+                                            </p>
+                                            <Link to="/goingsolar-case" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img3.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/9/23</div>
+                                            <h2 className="card-title h4">Navigating HOA Restrictions on Solar?...</h2>
+                                            <p className="card-text">
+                                                It is important to note that Evergy's Solar Subscription Program may not be the
+                                                most cost-effective solution for everyone. The program...
+                                            </p>
+                                            <Link to="/navigating-hoa" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
-        </div >
-    )
+        </div>
+    );
 }

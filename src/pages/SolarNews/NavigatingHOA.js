@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+
 export default function NavigatingHOA() {
     return (
         <div>
+            <Helmet>
+                <title>Navigating HOA Restrictions on Solar Installations | Helio GreenTech</title>
+                <meta name="description" content="Learn how to navigate HOA restrictions on solar installations with Helio GreenTech. Understand your rights and options for going solar." />
+                <meta name="keywords" content="HOA restrictions, solar installations, Helio GreenTech, solar energy, homeowners association" />
+            </Helmet>
+            
             <section>
                 <div className="section-border position-absolute" style={{ zIndex: -1 }}>
                     <div className="section-background position-absolute">
@@ -172,7 +180,7 @@ export default function NavigatingHOA() {
                                         AI Taking Over the World, But Not How You Thought: Unveiling the Environmental Concerns
                                         Helio GreenTech ...
                                     </p>
-                                   <Link to="/environmental-concerns" className="btn btn-primary">Read More →</Link>
+                                    <Link to="/environmental-concerns" className="btn btn-primary">Read More →</Link>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +236,7 @@ export default function NavigatingHOA() {
                                     <div className="small text-muted">10/9/23</div>
                                     <h2 className="card-title h4">How “Green” are Solar Panels?...</h2>
                                     <p className="card-text">
-                                    The solar industry has an important role to play in the fight against climate change. While solar panels offer significant benefits...
+                                        The solar industry has an important role to play in the fight against climate change. While solar panels offer significant benefits...
                                     </p>
                                     <Link to="/how-green" className="btn btn-primary">Read More →</Link>
                                 </div>

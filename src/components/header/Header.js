@@ -22,7 +22,7 @@ const Header = () => {
   const aboutUsSubItems = [
     { name: "Our Gallery", path: "our-gallery" },
     { name: "Our Team", path: "about-us/our-team" },
-   
+
   ];
 
   return (
@@ -47,7 +47,6 @@ const Header = () => {
         <span className="burger-bar"></span>
       </button>
 
-      {/* Navigation Links */}
       <nav className={`navbar-links ${isMenuOpen ? "open" : ""}`}>
         {navItems.map((item, index) => {
           const isActive = location.pathname === `/${item.path}`;
@@ -75,21 +74,22 @@ const Header = () => {
                 >
                   {item.name}
                 </Link>
-                <div  className={`dropdown-menu ${isAboutUsOpen ? "show" : ""}`} aria-labelledby="navbarDropdown">
-                  {aboutUsSubItems.map((subItem, subIndex) => (
-                    <Link
-                      key={subIndex}
-                      to={`/${subItem.path}`}
-                      className="dropdown-item"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsAboutUsOpen(false); // Close submenu on item click
-                      }}
-                    >
-                      {subItem.name}
-                    </Link>
-                  ))}
-                  <div className="dropdown-divider" />
+                <div className="dropdown-container">
+                  <div className={`dropdown-card ${isAboutUsOpen ? "show" : ""}`} aria-labelledby="navbarDropdown">
+                    {aboutUsSubItems.map((subItem, subIndex) => (
+                      <Link
+                        key={subIndex}
+                        to={`/${subItem.path}`}
+                        className="dropdown-item"
+                        onClick={() => {
+                          setIsAboutUsOpen(false); // Close submenu on item click
+                          setIsMenuOpen(false); // Close main menu
+                        }}
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             );
@@ -112,7 +112,7 @@ const Header = () => {
           className="navbar-link button-header"
           onClick={() => navigate('/estimated')}
         >
-           Get An Estimate
+          Get An Estimate
         </a>
       </nav>
     </header>

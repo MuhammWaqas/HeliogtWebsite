@@ -1532,60 +1532,71 @@ footer .bottom-details .bottom_text {
   /* Optional: Add a shadow effect */
 }
 
-.submenu {
-  display: block;
-  /* Show submenu */
-  padding-left: 20px;
-  /* Indent submenu items */
+
+.dropdown-card {
+  display: none; /* Hide by default */
+  position: absolute;
+  background-color: #eee; /* Card background */
+  border: 1px solid #ccc; /* Border for the card */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 0 10px lightblue;/* Subtle shadow */
+  z-index: 1000; /* Ensure it appears above other elements */
+  margin-top: 5px; /* Space between button and card */
+  width: 115px; /* Set a width for the card */
+  padding: 10px;
 }
 
-.submenu-link {
-  display: block;
-  /* Make submenu items block elements */
-  padding: 5px 0;
-  /* Add some padding */
+.dropdown-card.show {
+  display: block; /* Show the card when isAboutUsOpen is true */
 }
 
-.submenu-link:hover {
-  background-color: #f8f9fa;
-  /* Change background on hover */
+.dropdown-item {
+  display: block; /* Make items block elements */
+  padding: 5px 10px !important; /* Padding for items */
+  color: #080b1d !important; /* Text color */
+  text-decoration: none;
+  font-size: 14px !important; /* Remove underline */
 }
 
-.dropdown-menu {
-  margin-top: 5%;
-
+.dropdown-item:hover {
+  background-color: #f0f0f0; /* Change background on hover */
 }
+
+
 
 @media screen and (min-width: 992px) {
-  
-    .dropdown-menu {
-      line-height: initial;
-     
-    }
-  
+
+  .dropdown-menu {
+    line-height: initial;
+
+  }
+
   .dropdown {
     .dropdown-menu {
       display: none;
     }
   }
+
   .dropdown,
   .dropend {
     &:hover {
-      & > .dropdown-menu {
+      &>.dropdown-menu {
         display: block;
       }
     }
   }
+
   .dropdown {
     &:hover {
-      & > .dropdown-menu {
-        margin-top: -.5rem;
+      &>.dropdown-menu {
+        margin-top: 3%;
       }
     }
   }
+
   .dropend {
     &:hover {
-      & > .dropdown-menu {
+      &>.dropdown-menu {
         position: absolute;
         top: -.5rem;
         left: 100%;
@@ -1593,15 +1604,6 @@ footer .bottom-details .bottom_text {
       }
     }
   }
-}
-
-.dropdown-item {
-  text-decoration: none;
-  color: #080b1d !important;
-  font-weight: 400 !important;
-  font-family: "Poppins", sans-serif;
-  transition: color 0.3s;
-  font-size: 14px;
 }
 
 .testimonial {
@@ -1649,14 +1651,14 @@ footer .bottom-details .bottom_text {
 }
 
 .product-opacity {
- 
+
   position: absolute;
   box-shadow: inset 10px 10px 0px 171px rgba(0, 0, 0, 0.3);
   transition: 0.5s;
   z-index: 3;
 }
 
-.product-box:hover > .product-opacity {
+.product-box:hover>.product-opacity {
   box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
 }
 
@@ -1681,6 +1683,125 @@ footer .bottom-details .bottom_text {
   font-size: 19px;
 }
 
-.product-box:hover > .product-content {
+.product-box:hover>.product-content {
   opacity: 1;
+}
+
+
+.featuredPropBox {}
+
+.featuredPropBox ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: outside none none;
+  padding: 0;
+}
+
+.featuredPropBox ul li {
+  background-color: #eeeeee;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+  height: 250px;
+  margin: 5px;
+  width: 32%;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.featuredPropBox ul li:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 0.3s;
+}
+
+.featuredPropBox ul li:nth-child(1) {
+ background-color: #35bebf;
+}
+
+.featuredPropBox ul li:nth-child(2) {
+  background-color: #2c2b2b;
+}
+
+.featuredPropBox ul li:nth-child(3) {
+  background-color: #f7941e;
+}
+
+.featuredPropBox ul li:nth-child(4) {
+ background-color: #0077B5;
+}
+
+.featuredPropBox ul li:nth-child(5) {
+  background-color: #28a745;
+}
+
+.featuredPropBox ul li:nth-child(6) {
+  background-color: #1DA1F2;
+}
+
+.featuredPropBox ul li:nth-child(7) {
+  background-image: url('https://i.ibb.co/hLcmWbT/15646.jpg');
+}
+
+.featuredPropBox ul li:nth-child(8) {
+  background-image: url('https://i.ibb.co/89P5rTs/15678.jpg');
+}
+
+.featuredPropBox ul li:nth-child(9) {
+  background-image: url('https://i.ibb.co/RhZgpSG/20845.jpg');
+}
+
+.featuredPropBox ul li .fplogo {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.featuredPropBox ul li .fplogo img {
+  width: 100%;
+}
+
+.featuredPropBox ul li .fptext {
+  display: none;
+  font-size: 16px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease 0s;
+  width: 65%;
+  z-index: 1;
+}
+
+.featuredPropBox ul li .fptext p {
+  color: #fff;
+  margin: 0px;
+}
+
+.featuredPropBox ul li:hover {
+  box-shadow: 0 0 0 25px rgba(0, 0, 0, 0.2) inset;
+}
+
+.featuredPropBox ul li:hover:after {
+  background-color: rgba(22, 22, 22, 0.3);
+}
+
+.featuredPropBox ul li:hover .fplogo {
+  display: none;
+}
+
+.featuredPropBox ul li:hover .fptext {
+  display: block;
 }

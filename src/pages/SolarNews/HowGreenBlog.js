@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 export default function HowGreenBlog() {
     return (
         <div>
+            <Helmet>
+                <title>How Green are Solar Panels? | Helio Green Tech</title>
+                <meta name="description" content="Explore the environmental impact of solar panels, their sustainability, and how they contribute to a greener future." />
+                <meta name="keywords" content="solar panels, environmental impact, sustainability, green energy, renewable energy" />
+            </Helmet>
+
             <section>
                 <div className="section-border position-absolute" style={{ zIndex: -1 }}>
                     <div className="section-background position-absolute">
@@ -145,100 +152,203 @@ export default function HowGreenBlog() {
                 </div>
             </section>
 
-            {/* Page content*/}
+            {/* Page content with carousel */}
             <div className="container pt-5">
-                <div className="row">
-                    <div className="row">
-                        <div className="col-md-4">
-                            {/* Blog post*/}
-                            <div className="card mb-4">
-                                <a href="#!">
-                                    <img
-                                        className="card-img-top"
-                                        src="assets/content/solar_img.png"
-                                        alt="How “Green”"
-                                        style={{
-                                            display: 'block',
-                                            objectFit: 'cover',
-                                            width: '100%',
-                                            maxWidth: '632px', // Limit the image width
-                                            height: '100%',
-                                            maxHeight: '213px', // Limit the image height
-                                            borderRadius: '8px', // Optional rounding for style
-                                        }}
-                                    />
-                                </a>
-                                <div className="card-body">
-                                    <div className="small text-muted">10/16/23</div>
-                                    <h2 className="card-title h4">The Environmental Concerns of?...</h2>
-                                    <p className="card-text">
-                                        AI Taking Over the World, But Not How You Thought: Unveiling the Environmental Concerns
-                                        Helio GreenTech ...
-                                    </p>
-                                    <Link to="/environmental-concerns" className="btn btn-primary">Read More →</Link>
+                <div id="blogCarousel" className="carousel slide" data-bs-ride="carousel">
+                    <div className="carousel-inner">
+                        {/* First carousel item */}
+                        <div className="carousel-item active">
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img1.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/16/23</div>
+                                            <h2 className="card-title h4">The Environmental Concerns of?...</h2>
+                                            <p className="card-text">
+                                                AI Taking Over the World, But Not How You Thought: Unveiling the Environmental Concerns
+                                                Helio GreenTech ...
+                                            </p>
+                                            <Link to="/environmental-concerns" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img2.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/9/23</div>
+                                            <h2 className="card-title h4">Making The Case For Going Solar?...</h2>
+                                            <p className="card-text">
+                                                Helio GreenTech is a trusted solar energy company with many satisfied customers.
+                                                The company has received great reviews on multiple...
+                                            </p>
+                                            <Link to="/goingsolar-case" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img3.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/9/23</div>
+                                            <h2 className="card-title h4">Navigating HOA Restrictions on Solar?...</h2>
+                                            <p className="card-text">
+                                                It is important to note that Evergy's Solar Subscription Program may not be the
+                                                most cost-effective solution for everyone. The program...
+                                            </p>
+                                            <Link to="/navigating-hoa" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        {/* Blog post*/}
-                        <div className="col-md-4">
-                            <div className="card mb-4">
-                                <a href="#!">
-                                    <img
-                                        className="card-img-top"
-                                        src="assets/content/solar_img2.png"
-                                        alt="How “Green”"
-                                        style={{
-                                            display: 'block',
-                                            objectFit: 'cover',
-                                            width: '100%',
-                                            maxWidth: '632px', // Limit the image width
-                                            height: '100%',
-                                            maxHeight: '213px', // Limit the image height
-                                            borderRadius: '8px', // Optional rounding for style
-                                        }}
-                                    />
-                                </a>
-                                <div className="card-body">
-                                    <div className="small text-muted">Solar10/9/23</div>
-                                    <h2 className="card-title h4">Making The Case For Going Solar?...</h2>
-                                    <p className="card-text">
-                                        Helio GreenTech is a trusted solar energy company with many satisf- ied customers.
-                                        The company has received great reviews on multiple...
-                                    </p>
-                                    <Link to="/goingsolar-case" className="btn btn-primary">Read More →</Link>
+                        {/* Second carousel item */}
+                        <div className="carousel-item">
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img1.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/16/23</div>
+                                            <h2 className="card-title h4">The Environmental Concerns of?...</h2>
+                                            <p className="card-text">
+                                                AI Taking Over the World, But Not How You Thought: Unveiling the Environmental Concerns
+                                                Helio GreenTech ...
+                                            </p>
+                                            <Link to="/environmental-concerns" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="card mb-4">
-                                <a href="#!">
-                                    <img
-                                        className="card-img-top"
-                                        src="assets/content/solar_img3.png"
-                                        alt="How “Green”"
-                                        style={{
-                                            display: 'block',
-                                            objectFit: 'cover',
-                                            width: '100%',
-                                            maxWidth: '632px', // Limit the image width
-                                            height: '100%',
-                                            maxHeight: '213px', // Limit the image height
-                                            borderRadius: '8px', // Optional rounding for style
-                                        }}
-                                    />
-                                </a>
-                                <div className="card-body">
-                                    <div className="small text-muted">10/9/23</div>
-                                    <h2 className="card-title h4">Navigating HOA Restrictions on Solar?...</h2>
-                                    <p className="card-text">
-                                        It is important to note that Evergy's Solar Subscription Program may not be the
-                                        most cost-effective solution for everyone. The program...
-                                    </p>
-                                    <Link to="/navigating-hoa" className="btn btn-primary">Read More →</Link>
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img2.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/9/23</div>
+                                            <h2 className="card-title h4">Making The Case For Going Solar?...</h2>
+                                            <p className="card-text">
+                                                Helio GreenTech is a trusted solar energy company with many satisfied customers.
+                                                The company has received great reviews on multiple...
+                                            </p>
+                                            <Link to="/goingsolar-case" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="card mb-4">
+                                        <a href="#!">
+                                            <img
+                                                className="card-img-top"
+                                                src="assets/content/solar_img3.png"
+                                                alt="How “Green”"
+                                                style={{
+                                                    display: 'block',
+                                                    objectFit: 'cover',
+                                                    width: '100%',
+                                                    maxWidth: '632px',
+                                                    height: '100%',
+                                                    maxHeight: '213px',
+                                                    borderRadius: '8px',
+                                                }}
+                                            />
+                                        </a>
+                                        <div className="card-body">
+                                            <div className="small text-muted">10/9/23</div>
+                                            <h2 className="card-title h4">Navigating HOA Restrictions on Solar?...</h2>
+                                            <p className="card-text">
+                                                It is important to note that Evergy's Solar Subscription Program may not be the
+                                                most cost-effective solution for everyone. The program...
+                                            </p>
+                                            <Link to="/navigating-hoa" className="btn btn-primary">Read More →</Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </div>
