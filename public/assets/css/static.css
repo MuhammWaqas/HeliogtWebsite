@@ -32,16 +32,15 @@ p {
 /* Main Navbar */
 .navbar {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* overflow: hidden; */
   background: #eee;
   padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
+  flex-wrap: nowrap;
+  /* gap: 2rem; */
+  position: sticky !important;
+  top: 0 !important;
   z-index: 1000;
-  width: 98%;
   margin-left: 1%;
+  margin-right: 1%;
   border-radius: 2px 2px 20px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 18vh;
