@@ -572,7 +572,7 @@ p {
   overflow: hidden;
 } */
 .curve {
-  background-image: url('../content/solar_footer.webp'), url('../content/bg_exp.png');
+  background-image: url('../content/bg_exp1.png'), url('../content/bg_exp.png');
   background-size: cover, cover;
   background-position: center -5%, center -2%;
   background-repeat: no-repeat, no-repeat;

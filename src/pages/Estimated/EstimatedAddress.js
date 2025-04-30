@@ -16,7 +16,7 @@ export default function EstimatedAddress() {
     // Extracting data from context
     const address = data.locationInfo ?
         `${data.locationInfo.street} ${data.locationInfo.streetNumber}, ${data.locationInfo.city}, ${data.locationInfo.state} ${data.locationInfo.postalCode}, USA` :
-        "Address not provided"; // Default message if no address is passed
+        "Address not provided"; 
 
     const lat = data.locationInfo?.geo[0] || 37.7749; // Default latitude
     const lng = data.locationInfo?.geo[1] || -122.4194; // Default longitude
